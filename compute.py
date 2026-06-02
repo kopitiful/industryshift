@@ -40,6 +40,7 @@ EU_SECTORS = {
 EU_BENCHMARK = "EXW1.DE"
 
 OUT_PATH = "docs/data/sectors.json"
+HISTORY_MAX = 8  # weeks to retain
 
 
 def _get_series(df: pd.DataFrame, ticker: str) -> pd.Series:
@@ -88,20 +89,27 @@ def normalize(values: list) -> list:
     return ((arr - mn) / (mx - mn) * 10).round(2).tolist()
 
 
-def load_previous(region: str) -> dict:
-    """Returns {ticker: {score, rank}} from last run, or empty dict."""
+def load_history() -> list:
     if not os.path.exists(OUT_PATH):
-        return {}
+        return []
     try:
         with open(OUT_PATH, encoding="utf-8") as f:
-            old = json.load(f)
-        return {s["ticker"]: {"score": s["score"], "rank": s["rank"]} for s in old.get(region, [])}
+            return json.load(f).get("history", [])
     except Exception:
+        return []
+
+
+def prev_scores(history: list, weeks_ago: int, region: str) -> dict:
+    """Returns {ticker: score} from N weeks ago, or {} if not enough history."""
+    if len(history) < weeks_ago:
         return {}
+    return history[-weeks_ago][region]
 
 
-def compute(sectors: dict, benchmark: str, region: str) -> list:
-    prev = load_previous(region)
+def compute(sectors: dict, benchmark: str, region: str, history: list) -> list:
+    p1 = prev_scores(history, 1, region)
+    p2 = prev_scores(history, 2, region)
+    p4 = prev_scores(history, 4, region)
 
     tickers = list(sectors.keys()) + [benchmark]
     raw = yf.download(tickers, period="1y", auto_adjust=True, progress=False)
@@ -130,37 +138,55 @@ def compute(sectors: dict, benchmark: str, region: str) -> list:
     results = []
     for i, (ticker, name) in enumerate(sectors.items()):
         combined = round(0.4 * rs_n[i] + 0.3 * vol_n[i] + 0.3 * tech_n[i], 2)
+        sc = combined
+
+        d1 = round(sc - p1[ticker], 2) if ticker in p1 else None
+        d2 = round(sc - p2[ticker], 2) if ticker in p2 else None
+        d4 = round(sc - p4[ticker], 2) if ticker in p4 else None
+
         results.append({
             "ticker": ticker,
             "name": name,
-            "score": combined,
+            "score": sc,
             "rs": rs_n[i],
             "volume": vol_n[i],
             "technical": tech_n[i],
             "rs_pct": round(rs_raw[i], 2),
+            "delta_1w": d1,
+            "delta_2w": d2,
+            "delta_4w": d4,
         })
 
     results.sort(key=lambda x: x["score"], reverse=True)
     for i, r in enumerate(results):
         r["rank"] = i + 1
-        p = prev.get(r["ticker"])
-        r["score_delta"] = round(r["score"] - p["score"], 2) if p else None
-        r["rank_delta"] = (p["rank"] - r["rank"]) if p else None  # positive = moved up
 
     return results
 
 
 def main():
+    history = load_history()
+
     print("Computing US sectors...")
-    us = compute(US_SECTORS, US_BENCHMARK, "us")
+    us = compute(US_SECTORS, US_BENCHMARK, "us", history)
 
     print("Computing EU sectors...")
-    eu = compute(EU_SECTORS, EU_BENCHMARK, "eu")
+    eu = compute(EU_SECTORS, EU_BENCHMARK, "eu", history)
+
+    # Append snapshot to history AFTER computing (so deltas use old data)
+    snapshot = {
+        "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "us": {s["ticker"]: s["score"] for s in us},
+        "eu": {s["ticker"]: s["score"] for s in eu},
+    }
+    history.append(snapshot)
+    history = history[-HISTORY_MAX:]
 
     output = {
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "us": us,
         "eu": eu,
+        "history": history,
     }
 
     os.makedirs("docs/data", exist_ok=True)
@@ -169,6 +195,7 @@ def main():
 
     print(f"\nTop 3 US:  " + " | ".join(f"{s['name']} {s['score']}" for s in us[:3]))
     print(f"Top 3 EU:  " + " | ".join(f"{s['name']} {s['score']}" for s in eu[:3]))
+    print(f"History:   {len(history)} snapshots stored")
     print("\nDone → docs/data/sectors.json")
 
 
