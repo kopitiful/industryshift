@@ -57,13 +57,14 @@ def price_return_1w(s: pd.Series) -> float:
 
 
 def rs_score(s: pd.Series, b: pd.Series) -> float:
+    """Short-term excess return: 1W + 3W vs benchmark."""
     common = s.index.intersection(b.index)
-    if len(common) < 65:
+    if len(common) < 16:
         return 0.0
     s, b = s.loc[common], b.loc[common]
-    r1m = (s.iloc[-1] / s.iloc[-21] - 1) - (b.iloc[-1] / b.iloc[-21] - 1)
-    r3m = (s.iloc[-1] / s.iloc[-63] - 1) - (b.iloc[-1] / b.iloc[-63] - 1)
-    return float(np.mean([r1m, r3m]) * 100)
+    r1w = (s.iloc[-1] / s.iloc[-6]  - 1) - (b.iloc[-1] / b.iloc[-6]  - 1)
+    r3w = (s.iloc[-1] / s.iloc[-16] - 1) - (b.iloc[-1] / b.iloc[-16] - 1)
+    return float(np.mean([r1w, r3w]) * 100)
 
 
 def volume_score(vol: pd.Series) -> float:
@@ -154,7 +155,7 @@ def compute(sectors: dict, benchmark: str, region: str, history: list, today: st
 
     results = []
     for i, (ticker, name) in enumerate(sectors.items()):
-        combined = round(0.4 * rs_n[i] + 0.3 * vol_n[i] + 0.3 * tech_n[i], 2)
+        combined = round(0.35 * rs_n[i] + 0.50 * vol_n[i] + 0.15 * tech_n[i], 2)
         sc = combined
 
         def _d(prev: dict, key: str, cur: float):

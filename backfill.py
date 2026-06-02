@@ -30,7 +30,7 @@ def scores_as_of(sectors: dict, benchmark: str, close: pd.DataFrame, vol: pd.Dat
     rs_n, vol_n, tech_n = normalize(rs_raw), normalize(vol_raw), normalize(tech_raw)
     return {
         ticker: {
-            "s": round(0.4 * rs_n[i] + 0.3 * vol_n[i] + 0.3 * tech_n[i], 2),
+            "s": round(0.35 * rs_n[i] + 0.50 * vol_n[i] + 0.15 * tech_n[i], 2),
             "r": rs_n[i],
             "v": vol_n[i],
             "t": tech_n[i],
