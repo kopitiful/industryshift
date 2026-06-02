@@ -99,17 +99,18 @@ def load_history() -> list:
         return []
 
 
-def prev_scores(history: list, weeks_ago: int, region: str) -> dict:
-    """Returns {ticker: score} from N weeks ago, or {} if not enough history."""
-    if len(history) < weeks_ago:
+def prev_scores(history: list, weeks_ago: int, region: str, today: str) -> dict:
+    """Returns {ticker: score} from N weeks ago, excluding today's entry."""
+    past = [h for h in history if h["date"] != today]
+    if len(past) < weeks_ago:
         return {}
-    return history[-weeks_ago][region]
+    return past[-weeks_ago][region]
 
 
-def compute(sectors: dict, benchmark: str, region: str, history: list) -> list:
-    p1 = prev_scores(history, 1, region)
-    p2 = prev_scores(history, 2, region)
-    p4 = prev_scores(history, 4, region)
+def compute(sectors: dict, benchmark: str, region: str, history: list, today: str) -> list:
+    p1 = prev_scores(history, 1, region, today)
+    p2 = prev_scores(history, 2, region, today)
+    p4 = prev_scores(history, 4, region, today)
 
     tickers = list(sectors.keys()) + [benchmark]
     raw = yf.download(tickers, period="1y", auto_adjust=True, progress=False)
@@ -166,19 +167,21 @@ def compute(sectors: dict, benchmark: str, region: str, history: list) -> list:
 
 def main():
     history = load_history()
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     print("Computing US sectors...")
-    us = compute(US_SECTORS, US_BENCHMARK, "us", history)
+    us = compute(US_SECTORS, US_BENCHMARK, "us", history, today)
 
     print("Computing EU sectors...")
-    eu = compute(EU_SECTORS, EU_BENCHMARK, "eu", history)
+    eu = compute(EU_SECTORS, EU_BENCHMARK, "eu", history, today)
 
-    # Append snapshot to history AFTER computing (so deltas use old data)
+    # Replace today's snapshot if it exists, then append
     snapshot = {
-        "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "date": today,
         "us": {s["ticker"]: s["score"] for s in us},
         "eu": {s["ticker"]: s["score"] for s in eu},
     }
+    history = [h for h in history if h["date"] != today]
     history.append(snapshot)
     history = history[-HISTORY_MAX:]
 
