@@ -73,30 +73,26 @@
     tr.falling td { background: rgba(248,81,73,0.03); }
 
     .rank { color: var(--muted); text-align: center; font-size: 0.8rem; width: 2rem; }
-    .sector-name { font-weight: 500; line-height: 1.3; }
-    .ticker { color: var(--muted); font-size: 0.72rem; font-family: monospace; }
+    .sector-name { font-weight: 500; display: block; }
+    .ticker { color: var(--muted); font-size: 0.71rem; font-family: monospace; display: block; margin-top: 1px; }
 
-    .score-cell { display: flex; align-items: center; gap: 0.55rem; }
+    .score-cell { display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
     .score-num { font-weight: 700; font-size: 1rem; min-width: 2.4rem; }
-    .bar-bg { width: 60px; height: 5px; background: var(--border); border-radius: 3px; flex-shrink: 0; }
+    .bar-bg { width: 58px; height: 5px; background: var(--border); border-radius: 3px; flex-shrink: 0; }
     .bar-fill { height: 100%; border-radius: 3px; }
 
-    /* Trend cell */
-    .trend { text-align: center; white-space: nowrap; }
-    .trend-arrow { font-size: 1rem; line-height: 1; display: block; }
-    .trend-delta { font-size: 0.68rem; display: block; margin-top: 1px; font-weight: 600; }
-    .trend-rank { font-size: 0.62rem; color: var(--muted); display: block; }
+    /* Trend cell — arrow + delta on one line */
+    .trend { text-align: center; white-space: nowrap; font-size: 0.85rem; }
     .up   { color: var(--up); }
     .down { color: var(--down); }
     .flat { color: var(--flat); }
 
-    .sub { text-align: center; }
-    .sub .val { font-size: 0.82rem; font-weight: 500; display: block; }
-    .sub .lbl { font-size: 0.65rem; color: var(--muted); display: block; margin-top: 1px; }
-    .rs-detail { font-size: 0.7rem; color: var(--muted); display: block; margin-top: 1px; }
+    /* Sub score columns */
+    .sub { text-align: center; white-space: nowrap; }
+    .sub-num { font-size: 0.82rem; font-weight: 600; }
+    .sub-lbl { font-size: 0.63rem; color: var(--muted); display: block; margin-top: 2px; }
 
     .top-badge { display: inline-block; background: var(--accent); color: #0d1117; font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 0.35rem; vertical-align: middle; }
-    .new-badge { display: inline-block; background: var(--green); color: #0d1117; font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 0.35rem; vertical-align: middle; }
 
     .g { color: var(--green); }
     .y { color: var(--yellow); }
@@ -153,10 +149,6 @@ function show(name, tabEl) {
 function cls(score) { return score >= 7 ? 'g' : score >= 4 ? 'y' : 'r'; }
 function bgCls(score) { return score >= 7 ? 'bg-g' : score >= 4 ? 'bg-y' : 'bg-r'; }
 
-function dotDir(delta) {
-  if (delta === null || delta === undefined) return 'flat';
-  return delta >= 0.3 ? 'up' : delta <= -0.3 ? 'down' : 'flat';
-}
 
 function trendStrength(s) {
   const up1 = s.delta_1w !== null && s.delta_1w !== undefined && s.delta_1w >= 0.3;
@@ -170,31 +162,15 @@ function trendStrength(s) {
 function trendCell(s) {
   const d1 = s.delta_1w;
   if (d1 === null || d1 === undefined) {
-    return `<td class="trend"><span class="trend-arrow flat">—</span><span class="trend-delta flat" style="font-size:.65rem">new</span></td>`;
+    return `<td class="trend flat">—</td>`;
   }
   const strong = Math.abs(d1) >= 1.5;
   let arrow, dir;
   if (d1 >= 0.3)       { arrow = strong ? '⬆' : '↑'; dir = 'up'; }
   else if (d1 <= -0.3) { arrow = strong ? '⬇' : '↓'; dir = 'down'; }
   else                 { arrow = '→'; dir = 'flat'; }
-
   const sign = d1 >= 0 ? '+' : '';
-
-  const dot = v => {
-    const d = dotDir(v);
-    const sym = d === 'up' ? '●' : d === 'down' ? '●' : '○';
-    return `<span class="${d}" style="font-size:.6rem">${sym}</span>`;
-  };
-
-  const dots = (s.delta_2w !== undefined && s.delta_4w !== undefined)
-    ? `<span style="display:block;margin-top:2px;letter-spacing:1px">${dot(s.delta_1w)}${dot(s.delta_2w)}${dot(s.delta_4w)}<span class="trend-rank" style="margin-left:3px">1W 2W 4W</span></span>`
-    : '';
-
-  return `<td class="trend">
-    <span class="trend-arrow ${dir}">${arrow}</span>
-    <span class="trend-delta ${dir}">${sign}${d1.toFixed(1)}</span>
-    ${dots}
-  </td>`;
+  return `<td class="trend ${dir}">${arrow} ${sign}${d1.toFixed(1)}</td>`;
 }
 
 function rowClass(s) {
@@ -214,15 +190,12 @@ function renderTable(sectors, panelId) {
 
   const rows = sectors.map(s => {
     const w = (s.score / 10 * 100).toFixed(0);
-    const sign = s.rs_pct >= 0 ? '+' : '';
-    const isNew = s.delta_1w === null || s.delta_1w === undefined;
     const topBadge = s.rank === 1 ? '<span class="top-badge">TOP</span>' : '';
-    const newBadge = isNew ? '<span class="new-badge">NEW</span>' : '';
 
     return `<tr class="${rowClass(s)}">
       <td class="rank">${s.rank}</td>
       <td>
-        <span class="sector-name">${s.name}${topBadge}${newBadge}</span>
+        <span class="sector-name">${s.name}${topBadge}</span>
         <span class="ticker">${s.ticker}</span>
       </td>
       <td>
@@ -233,17 +206,16 @@ function renderTable(sectors, panelId) {
       </td>
       ${trendCell(s)}
       <td class="sub hide-sm">
-        <span class="val ${cls(s.rs)}">${s.rs.toFixed(1)}</span>
-        <span class="rs-detail">${sign}${s.rs_pct.toFixed(1)}%</span>
-        <span class="lbl">Rel. Strength</span>
+        <span class="sub-num ${cls(s.rs)}">${s.rs.toFixed(1)}</span>
+        <span class="sub-lbl">RS</span>
       </td>
       <td class="sub hide-sm">
-        <span class="val ${cls(s.volume)}">${s.volume.toFixed(1)}</span>
-        <span class="lbl">Volume</span>
+        <span class="sub-num ${cls(s.volume)}">${s.volume.toFixed(1)}</span>
+        <span class="sub-lbl">Vol</span>
       </td>
       <td class="sub hide-sm">
-        <span class="val ${cls(s.technical)}">${s.technical.toFixed(1)}</span>
-        <span class="lbl">Technical</span>
+        <span class="sub-num ${cls(s.technical)}">${s.technical.toFixed(1)}</span>
+        <span class="sub-lbl">Tech</span>
       </td>
     </tr>`;
   }).join('');
@@ -254,9 +226,9 @@ function renderTable(sectors, panelId) {
       <th>Sector</th>
       <th>Score</th>
       <th>W/W</th>
-      <th class="hide-sm">Rel. Strength</th>
-      <th class="hide-sm">Volume</th>
-      <th class="hide-sm">Technical</th>
+      <th class="hide-sm">RS</th>
+      <th class="hide-sm">Vol</th>
+      <th class="hide-sm">Tech</th>
     </tr></thead>
     <tbody>${rows}</tbody>
   </table>`;
