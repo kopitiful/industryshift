@@ -106,18 +106,26 @@ def load_history() -> list:
         return []
 
 
-def prev_scores(history: list, weeks_ago: int, region: str, today: str) -> dict:
-    """Returns {ticker: score} from N weeks ago, excluding today's entry."""
+def prev_snap(history: list, weeks_ago: int, region: str, today: str) -> dict:
+    """Returns {ticker: {s, r, v, t}} from N weeks ago, excluding today."""
     past = [h for h in history if h["date"] != today]
     if len(past) < weeks_ago:
         return {}
-    return past[-weeks_ago][region]
+    snap = past[-weeks_ago][region]
+    # Support old format {ticker: score} and new format {ticker: {s,r,v,t}}
+    result = {}
+    for ticker, val in snap.items():
+        if isinstance(val, dict):
+            result[ticker] = val
+        else:
+            result[ticker] = {"s": val, "r": None, "v": None, "t": None}
+    return result
 
 
 def compute(sectors: dict, benchmark: str, region: str, history: list, today: str) -> list:
-    p1 = prev_scores(history, 1, region, today)
-    p2 = prev_scores(history, 2, region, today)
-    p4 = prev_scores(history, 4, region, today)
+    p1 = prev_snap(history, 1, region, today)
+    p2 = prev_snap(history, 2, region, today)
+    p4 = prev_snap(history, 4, region, today)
 
     tickers = list(sectors.keys()) + [benchmark]
     raw = yf.download(tickers, period="1y", auto_adjust=True, progress=False)
@@ -149,9 +157,13 @@ def compute(sectors: dict, benchmark: str, region: str, history: list, today: st
         combined = round(0.4 * rs_n[i] + 0.3 * vol_n[i] + 0.3 * tech_n[i], 2)
         sc = combined
 
-        d1 = round(sc - p1[ticker], 2) if ticker in p1 else None
-        d2 = round(sc - p2[ticker], 2) if ticker in p2 else None
-        d4 = round(sc - p4[ticker], 2) if ticker in p4 else None
+        def _d(prev: dict, key: str, cur: float):
+            v = prev.get(ticker, {}).get(key)
+            return round(cur - v, 2) if v is not None else None
+
+        d1 = _d(p1, "s", sc)
+        d2 = _d(p2, "s", sc)
+        d4 = _d(p4, "s", sc)
 
         results.append({
             "ticker": ticker,
@@ -165,6 +177,9 @@ def compute(sectors: dict, benchmark: str, region: str, history: list, today: st
             "delta_1w": d1,
             "delta_2w": d2,
             "delta_4w": d4,
+            "delta_rs":   _d(p1, "r", rs_n[i]),
+            "delta_vol":  _d(p1, "v", vol_n[i]),
+            "delta_tech": _d(p1, "t", tech_n[i]),
         })
 
     results.sort(key=lambda x: x["score"], reverse=True)
@@ -185,10 +200,13 @@ def main():
     eu = compute(EU_SECTORS, EU_BENCHMARK, "eu", history, today)
 
     # Replace today's snapshot if it exists, then append
+    def _snap(sectors):
+        return {s["ticker"]: {"s": s["score"], "r": s["rs"], "v": s["volume"], "t": s["technical"]} for s in sectors}
+
     snapshot = {
         "date": today,
-        "us": {s["ticker"]: s["score"] for s in us},
-        "eu": {s["ticker"]: s["score"] for s in eu},
+        "us": _snap(us),
+        "eu": _snap(eu),
     }
     history = [h for h in history if h["date"] != today]
     history.append(snapshot)

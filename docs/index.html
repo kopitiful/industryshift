@@ -91,6 +91,7 @@
     .sub { text-align: center; white-space: nowrap; }
     .sub-num { font-size: 0.82rem; font-weight: 600; }
     .sub-lbl { font-size: 0.63rem; color: var(--muted); display: block; margin-top: 2px; }
+    .mini-arrow { font-size: 0.65rem; margin-left: 2px; }
 
     .top-badge { display: inline-block; background: var(--accent); color: #0d1117; font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 0.35rem; vertical-align: middle; }
 
@@ -149,6 +150,13 @@ function show(name, tabEl) {
 function cls(score) { return score >= 7 ? 'g' : score >= 4 ? 'y' : 'r'; }
 function bgCls(score) { return score >= 7 ? 'bg-g' : score >= 4 ? 'bg-y' : 'bg-r'; }
 
+function miniArrow(delta) {
+  if (delta === null || delta === undefined) return '';
+  if (delta >= 0.3)  return '<span class="up mini-arrow">↑</span>';
+  if (delta <= -0.3) return '<span class="down mini-arrow">↓</span>';
+  return '';
+}
+
 
 function trendStrength(s) {
   const up1 = s.delta_1w !== null && s.delta_1w !== undefined && s.delta_1w >= 0.3;
@@ -206,15 +214,15 @@ function renderTable(sectors, panelId) {
       </td>
       ${trendCell(s)}
       <td class="sub hide-sm">
-        <span class="sub-num ${cls(s.rs)}">${s.rs.toFixed(1)}</span>
+        <span class="sub-num ${cls(s.rs)}">${s.rs.toFixed(1)}</span>${miniArrow(s.delta_rs)}
         <span class="sub-lbl">RS</span>
       </td>
       <td class="sub hide-sm">
-        <span class="sub-num ${cls(s.volume)}">${s.volume.toFixed(1)}</span>
+        <span class="sub-num ${cls(s.volume)}">${s.volume.toFixed(1)}</span>${miniArrow(s.delta_vol)}
         <span class="sub-lbl">Vol</span>
       </td>
       <td class="sub hide-sm">
-        <span class="sub-num ${cls(s.technical)}">${s.technical.toFixed(1)}</span>
+        <span class="sub-num ${cls(s.technical)}">${s.technical.toFixed(1)}</span>${miniArrow(s.delta_tech)}
         <span class="sub-lbl">Tech</span>
       </td>
     </tr>`;

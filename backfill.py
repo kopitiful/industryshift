@@ -29,7 +29,12 @@ def scores_as_of(sectors: dict, benchmark: str, close: pd.DataFrame, vol: pd.Dat
         tech_raw.append(technical_score(_get_series(c, ticker)))
     rs_n, vol_n, tech_n = normalize(rs_raw), normalize(vol_raw), normalize(tech_raw)
     return {
-        ticker: round(0.4 * rs_n[i] + 0.3 * vol_n[i] + 0.3 * tech_n[i], 2)
+        ticker: {
+            "s": round(0.4 * rs_n[i] + 0.3 * vol_n[i] + 0.3 * tech_n[i], 2),
+            "r": rs_n[i],
+            "v": vol_n[i],
+            "t": tech_n[i],
+        }
         for i, ticker in enumerate(sectors)
     }
 
@@ -57,16 +62,17 @@ def main():
 
     new_snaps = []
     for friday in fridays:
-        if friday in existing_dates:
-            print(f"  {friday}: already present, skipping")
-            continue
         print(f"  {friday}: computing…")
         us = scores_as_of(US_SECTORS, US_BENCHMARK, close, vol, friday)
         eu = scores_as_of(EU_SECTORS, EU_BENCHMARK, close, vol, friday)
         if us and eu:
             new_snaps.append({"date": friday, "us": us, "eu": eu})
 
-    combined = sorted(new_snaps + data.get("history", []), key=lambda x: x["date"])[-8:]
+    # Merge: new_snaps override old entries for same date
+    by_date = {h["date"]: h for h in data.get("history", [])}
+    for s in new_snaps:
+        by_date[s["date"]] = s
+    combined = sorted(by_date.values(), key=lambda x: x["date"])[-8:]
     data["history"] = combined
 
     with open(OUT_PATH, "w", encoding="utf-8") as f:
