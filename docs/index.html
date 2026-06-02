@@ -106,6 +106,7 @@
     .subsector-ticker { color: var(--muted); font-size: 0.68rem; font-family: monospace; }
 
     .top-badge { display: inline-block; background: var(--accent); color: #0d1117; font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 0.35rem; vertical-align: middle; }
+    .surge-badge { display: inline-block; background: #f0b429; color: #0d1117; font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 0.35rem; vertical-align: middle; }
 
     .g { color: var(--green); }
     .y { color: var(--yellow); }
@@ -242,9 +243,12 @@ function renderTable(sectors, panelId, techSub) {
     return;
   }
 
+  const surgeTicker = sectors.reduce((a, b) => (b.vol_surge_2w ?? 0) > (a.vol_surge_2w ?? 0) ? b : a).ticker;
+
   const rows = sectors.map(s => {
     const w = (s.score / 10 * 100).toFixed(0);
     const topBadge = s.rank === 1 ? '<span class="top-badge">TOP</span>' : '';
+    const surgeBadge = s.ticker === surgeTicker ? `<span class="surge-badge" title="Biggest volume surge (2W): ${s.vol_surge_2w}×">VOL ×${s.vol_surge_2w}</span>` : '';
     const isUSTech = panelId === 'panel-us' && s.ticker === 'XLK' && techSub?.length;
     const expandBtn = isUSTech
       ? `<span class="expand-btn" id="tech-expand-btn" onclick="toggleSub()">▶</span>`
@@ -253,7 +257,7 @@ function renderTable(sectors, panelId, techSub) {
     return `<tr class="${rowClass(s)}">
       <td class="rank">${s.rank}</td>
       <td>
-        <span class="sector-name">${s.name}${topBadge}${expandBtn}</span>
+        <span class="sector-name">${s.name}${topBadge}${surgeBadge}${expandBtn}</span>
         <span class="ticker">${s.ticker}</span>
       </td>
       <td>

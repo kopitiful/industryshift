@@ -82,6 +82,15 @@ def volume_score(vol: pd.Series) -> float:
     return float((recent / baseline - 1) * 100) if baseline > 0 else 0.0
 
 
+def volume_surge_2w(vol: pd.Series) -> float:
+    """Ratio of last 2 weeks avg volume vs prior 4 weeks avg volume."""
+    if len(vol) < 30:
+        return 1.0
+    recent = vol.iloc[-10:].mean()
+    prior = vol.iloc[-30:-10].mean()
+    return round(float(recent / prior), 2) if prior > 0 else 1.0
+
+
 def technical_score(s: pd.Series) -> float:
     if len(s) < 50:
         return 0.0
@@ -147,7 +156,7 @@ def compute(sectors: dict, benchmark: str, region: str, history: list, today: st
 
     bench_close = _get_series(close, benchmark)
 
-    rs_raw, vol_raw, tech_raw, price1w_raw = [], [], [], []
+    rs_raw, vol_raw, tech_raw, price1w_raw, surge_raw = [], [], [], [], []
     for ticker in sectors:
         s = _get_series(close, ticker)
         v = _get_series(vol, ticker)
@@ -155,6 +164,7 @@ def compute(sectors: dict, benchmark: str, region: str, history: list, today: st
         vol_raw.append(volume_score(v))
         tech_raw.append(technical_score(s))
         price1w_raw.append(price_return_1w(s))
+        surge_raw.append(volume_surge_2w(v))
 
     rs_n = normalize(rs_raw)
     vol_n = normalize(vol_raw)
@@ -182,6 +192,7 @@ def compute(sectors: dict, benchmark: str, region: str, history: list, today: st
             "technical": tech_n[i],
             "rs_pct": round(rs_raw[i], 2),
             "price_1w": round(price1w_raw[i], 2),
+            "vol_surge_2w": surge_raw[i],
             "delta_1w": d1,
             "delta_2w": d2,
             "delta_4w": d4,
@@ -208,7 +219,7 @@ def compute_subsectors(sectors: dict, benchmark: str) -> list:
         vol   = pd.DataFrame({tickers[0]: raw["Volume"]})
 
     bench_close = _get_series(close, benchmark)
-    rs_raw, vol_raw, tech_raw, price1w_raw = [], [], [], []
+    rs_raw, vol_raw, tech_raw, price1w_raw, surge_raw = [], [], [], [], []
     for ticker in sectors:
         s = _get_series(close, ticker)
         v = _get_series(vol, ticker)
@@ -216,6 +227,7 @@ def compute_subsectors(sectors: dict, benchmark: str) -> list:
         vol_raw.append(volume_score(v))
         tech_raw.append(technical_score(s))
         price1w_raw.append(price_return_1w(s))
+        surge_raw.append(volume_surge_2w(v))
 
     rs_n, vol_n, tech_n = normalize(rs_raw), normalize(vol_raw), normalize(tech_raw)
     results = []
@@ -230,6 +242,7 @@ def compute_subsectors(sectors: dict, benchmark: str) -> list:
             "technical": tech_n[i],
             "rs_pct": round(rs_raw[i], 2),
             "price_1w": round(price1w_raw[i], 2),
+            "vol_surge_2w": surge_raw[i],
         })
     results.sort(key=lambda x: x["score"], reverse=True)
     for i, r in enumerate(results):
