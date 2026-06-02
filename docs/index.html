@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BranchenShift Radar</title>
+  <title>IndustryShift Radar</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -28,6 +28,25 @@
 
     header { margin-bottom: 1.75rem; }
     h1 { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; }
+    .about {
+      margin-top: 1rem;
+      padding: 0.9rem 1.1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .about strong { color: var(--text); }
+    .about .pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.65rem; }
+    .pill {
+      background: var(--border);
+      color: var(--muted);
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
     h1 em { color: var(--accent); font-style: normal; }
     .meta { color: var(--muted); font-size: 0.8rem; margin-top: 0.3rem; }
 
@@ -107,8 +126,19 @@
 <body>
 <div class="container">
   <header>
-    <h1>Branchen<em>Shift</em> Radar</h1>
+    <h1>Industry<em>Shift</em> Radar</h1>
     <p class="meta" id="meta">Lade Daten…</p>
+    <div class="about">
+      <strong>Was ist IndustryShift?</strong> Dieses Tool erkennt frühzeitig, welche Marktsektoren gerade Kapital anziehen – bevor ein Trend im breiten Markt sichtbar wird. Wöchentlich werden 11 US-Sektoren (SPDR ETFs) und 11 europäische Sektoren (iShares STOXX 600) analysiert und nach einem kombinierten Score gerankt.
+      <br><br>
+      <strong>Wie funktioniert der Score?</strong> Jeder Sektor bekommt Punkte in drei Kategorien: <strong>Relative Stärke</strong> (outperformt der Sektor den Gesamtmarkt über 1 und 3 Monate?), <strong>Volumen</strong> (fließt ungewöhnlich viel Kapital hinein?) und <strong>Technisch</strong> (steht der Kurs über MA50/MA200 und nahe am 52-Wochen-Hoch?). Die drei Werte werden zu einem Gesamtscore von 0–10 zusammengefasst.
+      <div class="pills">
+        <span class="pill">🟢 7–10 starker Shift</span>
+        <span class="pill">🟡 4–7 neutral</span>
+        <span class="pill">🔴 0–4 schwach</span>
+        <span class="pill">aktualisiert freitags nach Börsenschluss</span>
+      </div>
+    </div>
   </header>
 
   <div class="tabs">
