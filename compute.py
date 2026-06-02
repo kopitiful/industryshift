@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Wöchentliche Sektor-Rotation-Scores für US und Europa."""
+"""Weekly sector rotation scores for US and Europe."""
 
 import json
 import os
@@ -10,45 +10,45 @@ import pandas as pd
 import yfinance as yf
 
 US_SECTORS = {
-    "XLK": "Technologie",
-    "XLC": "Kommunikation",
-    "XLF": "Finanzen",
-    "XLE": "Energie",
-    "XLV": "Gesundheit",
-    "XLI": "Industrie",
-    "XLB": "Rohstoffe",
-    "XLY": "Konsum zyklisch",
-    "XLP": "Konsum defensiv",
-    "XLU": "Versorger",
-    "XLRE": "Immobilien",
+    "XLK": "Technology",
+    "XLC": "Communication",
+    "XLF": "Financials",
+    "XLE": "Energy",
+    "XLV": "Health Care",
+    "XLI": "Industrials",
+    "XLB": "Materials",
+    "XLY": "Consumer Discret.",
+    "XLP": "Consumer Staples",
+    "XLU": "Utilities",
+    "XLRE": "Real Estate",
 }
 US_BENCHMARK = "SPY"
 
 EU_SECTORS = {
-    "EXV3.DE": "Technologie",
-    "EXV4.DE": "Banken",
-    "EXH7.DE": "Gesundheit",
-    "EXV6.DE": "Energie",
-    "EXV1.DE": "Automobil",
-    "EXI3.DE": "Rohstoffe",
-    "EXV5.DE": "Telekommunikation",
-    "EXV2.DE": "Versicherung",
-    "EXH1.DE": "Versorger",
-    "EXH8.DE": "Lebensmittel",
-    "EXH4.DE": "Industrie",
+    "EXV3.DE": "Technology",
+    "EXV4.DE": "Banks",
+    "EXH7.DE": "Health Care",
+    "EXV6.DE": "Energy",
+    "EXV1.DE": "Automobiles",
+    "EXI3.DE": "Basic Resources",
+    "EXV5.DE": "Telecom",
+    "EXV2.DE": "Insurance",
+    "EXH1.DE": "Utilities",
+    "EXH8.DE": "Food & Beverage",
+    "EXH4.DE": "Industrials",
 }
 EU_BENCHMARK = "EXW1.DE"
 
+OUT_PATH = "docs/data/sectors.json"
+
 
 def _get_series(df: pd.DataFrame, ticker: str) -> pd.Series:
-    """Gibt eine Preisserie aus einem DataFrame zurück, toleriert fehlende Ticker."""
     if ticker in df.columns:
         return df[ticker].dropna()
     return pd.Series(dtype=float)
 
 
 def rs_score(s: pd.Series, b: pd.Series) -> float:
-    """Überschussrendite des Sektors vs. Benchmark (1M + 3M Durchschnitt)."""
     common = s.index.intersection(b.index)
     if len(common) < 65:
         return 0.0
@@ -59,7 +59,6 @@ def rs_score(s: pd.Series, b: pd.Series) -> float:
 
 
 def volume_score(vol: pd.Series) -> float:
-    """Aktuelle Woche vs. 4-Wochen-Durchschnitt (in %)."""
     if len(vol) < 25:
         return 0.0
     recent = vol.iloc[-5:].sum()
@@ -68,7 +67,6 @@ def volume_score(vol: pd.Series) -> float:
 
 
 def technical_score(s: pd.Series) -> float:
-    """0–100: MA50, MA200, Abstand zum 52W-Hoch."""
     if len(s) < 50:
         return 0.0
     price = s.iloc[-1]
@@ -83,7 +81,6 @@ def technical_score(s: pd.Series) -> float:
 
 
 def normalize(values: list) -> list:
-    """Skaliert eine Werteliste auf 0–10."""
     arr = np.array(values, dtype=float)
     mn, mx = arr.min(), arr.max()
     if mx == mn:
@@ -91,7 +88,21 @@ def normalize(values: list) -> list:
     return ((arr - mn) / (mx - mn) * 10).round(2).tolist()
 
 
-def compute(sectors: dict, benchmark: str) -> list:
+def load_previous(region: str) -> dict:
+    """Returns {ticker: {score, rank}} from last run, or empty dict."""
+    if not os.path.exists(OUT_PATH):
+        return {}
+    try:
+        with open(OUT_PATH, encoding="utf-8") as f:
+            old = json.load(f)
+        return {s["ticker"]: {"score": s["score"], "rank": s["rank"]} for s in old.get(region, [])}
+    except Exception:
+        return {}
+
+
+def compute(sectors: dict, benchmark: str, region: str) -> list:
+    prev = load_previous(region)
+
     tickers = list(sectors.keys()) + [benchmark]
     raw = yf.download(tickers, period="1y", auto_adjust=True, progress=False)
 
@@ -132,15 +143,19 @@ def compute(sectors: dict, benchmark: str) -> list:
     results.sort(key=lambda x: x["score"], reverse=True)
     for i, r in enumerate(results):
         r["rank"] = i + 1
+        p = prev.get(r["ticker"])
+        r["score_delta"] = round(r["score"] - p["score"], 2) if p else None
+        r["rank_delta"] = (p["rank"] - r["rank"]) if p else None  # positive = moved up
+
     return results
 
 
 def main():
-    print("Berechne US-Sektoren...")
-    us = compute(US_SECTORS, US_BENCHMARK)
+    print("Computing US sectors...")
+    us = compute(US_SECTORS, US_BENCHMARK, "us")
 
-    print("Berechne EU-Sektoren...")
-    eu = compute(EU_SECTORS, EU_BENCHMARK)
+    print("Computing EU sectors...")
+    eu = compute(EU_SECTORS, EU_BENCHMARK, "eu")
 
     output = {
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -149,12 +164,12 @@ def main():
     }
 
     os.makedirs("docs/data", exist_ok=True)
-    with open("docs/data/sectors.json", "w", encoding="utf-8") as f:
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print(f"\nTop 3 USA:    " + " | ".join(f"{s['name']} {s['score']}" for s in us[:3]))
-    print(f"Top 3 Europa: " + " | ".join(f"{s['name']} {s['score']}" for s in eu[:3]))
-    print("\nFertig → docs/data/sectors.json")
+    print(f"\nTop 3 US:  " + " | ".join(f"{s['name']} {s['score']}" for s in us[:3]))
+    print(f"Top 3 EU:  " + " | ".join(f"{s['name']} {s['score']}" for s in eu[:3]))
+    print("\nDone → docs/data/sectors.json")
 
 
 if __name__ == "__main__":

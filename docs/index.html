@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +16,9 @@
       --yellow: #d29922;
       --red: #f85149;
       --accent: #58a6ff;
+      --up: #3fb950;
+      --down: #f85149;
+      --flat: #8b949e;
     }
     body {
       background: var(--bg);
@@ -24,10 +27,13 @@
       font-size: 14px;
       min-height: 100vh;
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.25rem; }
+    .container { max-width: 920px; margin: 0 auto; padding: 2rem 1.25rem; }
 
     header { margin-bottom: 1.75rem; }
     h1 { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .meta { color: var(--muted); font-size: 0.8rem; margin-top: 0.3rem; }
+
     .about {
       margin-top: 1rem;
       padding: 0.9rem 1.1rem;
@@ -36,31 +42,15 @@
       border-radius: 8px;
       font-size: 0.82rem;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
     .about strong { color: var(--text); }
-    .about .pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.65rem; }
-    .pill {
-      background: var(--border);
-      color: var(--muted);
-      font-size: 0.7rem;
-      padding: 2px 8px;
-      border-radius: 20px;
-    }
-    h1 em { color: var(--accent); font-style: normal; }
-    .meta { color: var(--muted); font-size: 0.8rem; margin-top: 0.3rem; }
+    .about p + p { margin-top: 0.5rem; }
+    .pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.65rem; }
+    .pill { background: var(--border); color: var(--muted); font-size: 0.7rem; padding: 2px 8px; border-radius: 20px; }
 
-    .tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; gap: 0; }
-    .tab {
-      padding: 0.55rem 1.25rem;
-      cursor: pointer;
-      color: var(--muted);
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
-      font-size: 0.875rem;
-      transition: color .15s;
-      user-select: none;
-    }
+    .tabs { display: flex; border-bottom: 1px solid var(--border); margin: 1.75rem 0 1.5rem; }
+    .tab { padding: 0.55rem 1.25rem; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; font-size: 0.875rem; transition: color .15s; user-select: none; }
     .tab:hover { color: var(--text); }
     .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
@@ -68,18 +58,15 @@
     .panel.active { display: block; }
 
     table { width: 100%; border-collapse: collapse; }
-    thead th {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--muted);
-      padding: 0.5rem 0.75rem;
-      border-bottom: 1px solid var(--border);
-      white-space: nowrap;
-    }
+    thead th { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); white-space: nowrap; }
     td { padding: 0.7rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
     tr:last-child td { border-bottom: none; }
     tbody tr:hover td { background: rgba(255,255,255,0.025); }
+
+    /* Mover rows */
+    tr.rising td { background: rgba(63,185,80,0.04); }
+    tr.rising td:first-child { border-left: 2px solid var(--green); }
+    tr.falling td { background: rgba(248,81,73,0.03); }
 
     .rank { color: var(--muted); text-align: center; font-size: 0.8rem; width: 2rem; }
     .sector-name { font-weight: 500; line-height: 1.3; }
@@ -87,25 +74,25 @@
 
     .score-cell { display: flex; align-items: center; gap: 0.55rem; }
     .score-num { font-weight: 700; font-size: 1rem; min-width: 2.4rem; }
-    .bar-bg { width: 64px; height: 5px; background: var(--border); border-radius: 3px; flex-shrink: 0; }
+    .bar-bg { width: 60px; height: 5px; background: var(--border); border-radius: 3px; flex-shrink: 0; }
     .bar-fill { height: 100%; border-radius: 3px; }
+
+    /* Trend cell */
+    .trend { text-align: center; white-space: nowrap; }
+    .trend-arrow { font-size: 1rem; line-height: 1; display: block; }
+    .trend-delta { font-size: 0.68rem; display: block; margin-top: 1px; font-weight: 600; }
+    .trend-rank { font-size: 0.62rem; color: var(--muted); display: block; }
+    .up   { color: var(--up); }
+    .down { color: var(--down); }
+    .flat { color: var(--flat); }
 
     .sub { text-align: center; }
     .sub .val { font-size: 0.82rem; font-weight: 500; display: block; }
     .sub .lbl { font-size: 0.65rem; color: var(--muted); display: block; margin-top: 1px; }
     .rs-detail { font-size: 0.7rem; color: var(--muted); display: block; margin-top: 1px; }
 
-    .top-badge {
-      display: inline-block;
-      background: var(--accent);
-      color: #0d1117;
-      font-size: 0.6rem;
-      font-weight: 700;
-      padding: 1px 5px;
-      border-radius: 3px;
-      margin-left: 0.35rem;
-      vertical-align: middle;
-    }
+    .top-badge { display: inline-block; background: var(--accent); color: #0d1117; font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 0.35rem; vertical-align: middle; }
+    .new-badge { display: inline-block; background: var(--green); color: #0d1117; font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 0.35rem; vertical-align: middle; }
 
     .g { color: var(--green); }
     .y { color: var(--yellow); }
@@ -127,27 +114,28 @@
 <div class="container">
   <header>
     <h1>Industry<em>Shift</em> Radar</h1>
-    <p class="meta" id="meta">Lade Daten…</p>
+    <p class="meta" id="meta">Loading…</p>
     <div class="about">
-      <strong>Was ist IndustryShift?</strong> Dieses Tool erkennt frühzeitig, welche Marktsektoren gerade Kapital anziehen – bevor ein Trend im breiten Markt sichtbar wird. Wöchentlich werden 11 US-Sektoren (SPDR ETFs) und 11 europäische Sektoren (iShares STOXX 600) analysiert und nach einem kombinierten Score gerankt.
-      <br><br>
-      <strong>Wie funktioniert der Score?</strong> Jeder Sektor bekommt Punkte in drei Kategorien: <strong>Relative Stärke</strong> (outperformt der Sektor den Gesamtmarkt über 1 und 3 Monate?), <strong>Volumen</strong> (fließt ungewöhnlich viel Kapital hinein?) und <strong>Technisch</strong> (steht der Kurs über MA50/MA200 und nahe am 52-Wochen-Hoch?). Die drei Werte werden zu einem Gesamtscore von 0–10 zusammengefasst.
+      <p><strong>What is IndustryShift?</strong> This tool detects sector rotations in the stock market as early as possible — before a trend becomes visible in the broader market. Every Friday after close, 11 US sectors (SPDR ETFs vs. SPY) and 11 European sectors (iShares STOXX 600 ETFs vs. EXW1) are scored and ranked.</p>
+      <p><strong>How the score works:</strong> Each sector is rated 0–10 across three dimensions: <strong>Relative Strength</strong> (does it outperform the market over 1 and 3 months?), <strong>Volume</strong> (is unusual capital flowing in this week?), and <strong>Technical</strong> (is it trading above MA50/MA200 and near its 52-week high?). The combined score is weighted 40% RS · 30% Volume · 30% Technical.</p>
+      <p><strong>The trend arrow</strong> shows how a sector's score changed compared to <em>last week</em> — the earliest signal that a rotation is starting. A green rising row means the sector gained significant ground in the past 7 days.</p>
       <div class="pills">
-        <span class="pill">🟢 7–10 starker Shift</span>
+        <span class="pill">🟢 7–10 strong shift</span>
         <span class="pill">🟡 4–7 neutral</span>
-        <span class="pill">🔴 0–4 schwach</span>
-        <span class="pill">aktualisiert freitags nach Börsenschluss</span>
+        <span class="pill">🔴 0–4 weak</span>
+        <span class="pill">↑ rising this week</span>
+        <span class="pill">updated every Friday after market close</span>
       </div>
     </div>
   </header>
 
   <div class="tabs">
     <div class="tab active" onclick="show('us', this)">🇺🇸 USA</div>
-    <div class="tab" onclick="show('eu', this)">🇪🇺 Europa</div>
+    <div class="tab" onclick="show('eu', this)">🇪🇺 Europe</div>
   </div>
 
-  <div id="panel-us" class="panel active"><p class="err">Lade…</p></div>
-  <div id="panel-eu" class="panel"><p class="err">Lade…</p></div>
+  <div id="panel-us" class="panel active"><p class="err">Loading…</p></div>
+  <div id="panel-eu" class="panel"><p class="err">Loading…</p></div>
 </div>
 
 <script>
@@ -158,27 +146,59 @@ function show(name, tabEl) {
   document.getElementById('panel-' + name).classList.add('active');
 }
 
-function cls(score) {
-  return score >= 7 ? 'g' : score >= 4 ? 'y' : 'r';
+function cls(score) { return score >= 7 ? 'g' : score >= 4 ? 'y' : 'r'; }
+function bgCls(score) { return score >= 7 ? 'bg-g' : score >= 4 ? 'bg-y' : 'bg-r'; }
+
+function trendCell(s) {
+  if (s.score_delta === null || s.score_delta === undefined) {
+    return `<td class="trend"><span class="trend-arrow flat">—</span><span class="trend-delta flat">new</span></td>`;
+  }
+  const d = s.score_delta;
+  const rd = s.rank_delta;
+  const strong = Math.abs(d) >= 1.5;
+
+  let arrow, dir;
+  if (d >= 0.3)       { arrow = strong ? '⬆' : '↑'; dir = 'up'; }
+  else if (d <= -0.3) { arrow = strong ? '⬇' : '↓'; dir = 'down'; }
+  else                { arrow = '→'; dir = 'flat'; }
+
+  const sign = d >= 0 ? '+' : '';
+  const rankStr = rd && rd !== 0
+    ? `<span class="trend-rank">${rd > 0 ? '▲' : '▼'}${Math.abs(rd)} ranks</span>`
+    : '';
+
+  return `<td class="trend">
+    <span class="trend-arrow ${dir}">${arrow}</span>
+    <span class="trend-delta ${dir}">${sign}${d.toFixed(1)}</span>
+    ${rankStr}
+  </td>`;
 }
-function bgCls(score) {
-  return score >= 7 ? 'bg-g' : score >= 4 ? 'bg-y' : 'bg-r';
+
+function rowClass(s) {
+  if (s.score_delta === null || s.score_delta === undefined) return '';
+  if (s.score_delta >= 1.5) return 'rising';
+  if (s.score_delta <= -1.5) return 'falling';
+  return '';
 }
 
 function renderTable(sectors, panelId) {
   const el = document.getElementById(panelId);
   if (!sectors?.length) {
-    el.innerHTML = '<p class="err">Keine Daten verfügbar.</p>';
+    el.innerHTML = '<p class="err">No data available.</p>';
     return;
   }
 
   const rows = sectors.map(s => {
     const w = (s.score / 10 * 100).toFixed(0);
     const sign = s.rs_pct >= 0 ? '+' : '';
-    return `<tr>
+    const isNew = s.score_delta === null || s.score_delta === undefined;
+    const topBadge = s.rank === 1 ? '<span class="top-badge">TOP</span>' : '';
+    const newBadge = isNew ? '<span class="new-badge">NEW</span>' : '';
+
+    return `<tr class="${rowClass(s)}">
       <td class="rank">${s.rank}</td>
       <td>
-        <span class="sector-name">${s.name}${s.rank === 1 ? '<span class="top-badge">TOP</span>' : ''}</span>
+        <span class="sector-name">${s.name}${topBadge}${newBadge}</span>
         <span class="ticker">${s.ticker}</span>
       </td>
       <td>
@@ -187,18 +207,19 @@ function renderTable(sectors, panelId) {
           <div class="bar-bg"><div class="bar-fill ${bgCls(s.score)}" style="width:${w}%"></div></div>
         </div>
       </td>
+      ${trendCell(s)}
       <td class="sub hide-sm">
         <span class="val ${cls(s.rs)}">${s.rs.toFixed(1)}</span>
         <span class="rs-detail">${sign}${s.rs_pct.toFixed(1)}%</span>
-        <span class="lbl">Rel. Stärke</span>
+        <span class="lbl">Rel. Strength</span>
       </td>
       <td class="sub hide-sm">
         <span class="val ${cls(s.volume)}">${s.volume.toFixed(1)}</span>
-        <span class="lbl">Volumen</span>
+        <span class="lbl">Volume</span>
       </td>
       <td class="sub hide-sm">
         <span class="val ${cls(s.technical)}">${s.technical.toFixed(1)}</span>
-        <span class="lbl">Technisch</span>
+        <span class="lbl">Technical</span>
       </td>
     </tr>`;
   }).join('');
@@ -206,11 +227,12 @@ function renderTable(sectors, panelId) {
   el.innerHTML = `<table>
     <thead><tr>
       <th>#</th>
-      <th>Sektor</th>
+      <th>Sector</th>
       <th>Score</th>
-      <th class="hide-sm">RS</th>
-      <th class="hide-sm">Volumen</th>
-      <th class="hide-sm">Technisch</th>
+      <th>W/W</th>
+      <th class="hide-sm">Rel. Strength</th>
+      <th class="hide-sm">Volume</th>
+      <th class="hide-sm">Technical</th>
     </tr></thead>
     <tbody>${rows}</tbody>
   </table>`;
@@ -220,15 +242,15 @@ fetch('data/sectors.json')
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(d => {
     const dt = new Date(d.updated);
-    const fmt = dt.toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Berlin' });
-    document.getElementById('meta').textContent = `Stand: ${fmt} · wöchentlich freitags aktualisiert`;
+    const fmt = dt.toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Berlin' });
+    document.getElementById('meta').textContent = `Last update: ${fmt} · refreshed every Friday after market close`;
     renderTable(d.us, 'panel-us');
     renderTable(d.eu, 'panel-eu');
   })
   .catch(() => {
-    document.getElementById('meta').textContent = 'Daten konnten nicht geladen werden.';
+    document.getElementById('meta').textContent = 'Could not load data.';
     ['panel-us', 'panel-eu'].forEach(id => {
-      document.getElementById(id).innerHTML = '<p class="err">Fehler beim Laden. Bitte später erneut versuchen.</p>';
+      document.getElementById(id).innerHTML = '<p class="err">Failed to load data. Please try again later.</p>';
     });
   });
 </script>
