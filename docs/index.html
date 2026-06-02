@@ -180,16 +180,19 @@ function trendStrength(s) {
   return 1;
 }
 
+function perfCell(pct) {
+  if (pct === null || pct === undefined) return `<td class="trend flat">—</td>`;
+  const dir = pct >= 0.3 ? 'up' : pct <= -0.3 ? 'down' : 'flat';
+  const sign = pct >= 0 ? '+' : '';
+  return `<td class="trend ${dir}">${sign}${pct.toFixed(1)}%</td>`;
+}
+
 function trendCell(s) {
   const p = s.price_1w;
-  if (p === null || p === undefined) {
-    return `<td class="trend flat">—</td>`;
-  }
+  if (p === null || p === undefined) return `<td class="trend flat">—</td>`;
   const strong = Math.abs(p) >= 2.0;
-  let arrow, dir;
-  if (p >= 0.3)       { arrow = strong ? '⬆' : '↑'; dir = 'up'; }
-  else if (p <= -0.3) { arrow = strong ? '⬇' : '↓'; dir = 'down'; }
-  else                { arrow = '→'; dir = 'flat'; }
+  const dir = p >= 0.3 ? 'up' : p <= -0.3 ? 'down' : 'flat';
+  const arrow = p >= 0.3 ? (strong ? '⬆' : '↑') : p <= -0.3 ? (strong ? '⬇' : '↓') : '→';
   const sign = p >= 0 ? '+' : '';
   return `<td class="trend ${dir}">${arrow} ${sign}${p.toFixed(1)}%</td>`;
 }
@@ -269,6 +272,7 @@ function renderTable(sectors, panelId, techSub) {
         </div>
       </td>
       ${trendCell(s)}
+      ${perfCell(s.price_2w)}
       <td class="sub hide-sm">
         <span class="sub-num ${cls(s.rs)}">${s.rs.toFixed(1)}</span>${miniArrow(s.delta_rs)}
         <span class="sub-lbl">RS</span>
@@ -289,7 +293,8 @@ function renderTable(sectors, panelId, techSub) {
       <th>#</th>
       <th>Sector</th>
       <th>Score</th>
-      <th>W/W</th>
+      <th>1W</th>
+      <th>2W</th>
       <th class="hide-sm">RS</th>
       <th class="hide-sm">Vol</th>
       <th class="hide-sm">Tech</th>
