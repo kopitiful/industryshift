@@ -221,13 +221,14 @@ function subRow(techSub) {
         </div>
       </td>
       <td class="trend ${dir}" style="font-size:.8rem">${s.price_1w >= 0.3 ? '↑' : s.price_1w <= -0.3 ? '↓' : '→'} ${sign}${s.price_1w.toFixed(1)}%</td>
+      ${perfCell(s.price_2w)}
       <td class="sub hide-sm"><span class="sub-num ${cls(s.rs)}">${s.rs.toFixed(1)}</span><span class="sub-lbl">RS</span></td>
       <td class="sub hide-sm"><span class="sub-num ${cls(s.volume)}">${s.volume.toFixed(1)}</span><span class="sub-lbl">Vol</span></td>
       <td class="sub hide-sm"><span class="sub-num ${cls(s.technical)}">${s.technical.toFixed(1)}</span><span class="sub-lbl">Tech</span></td>
     </tr>`;
   }).join('');
   return `<tr class="subsector-row" id="tech-sub-row">
-    <td colspan="7"><table class="subsector-table">${inner}</table></td>
+    <td colspan="8"><table class="subsector-table">${inner}</table></td>
   </tr>`;
 }
 
