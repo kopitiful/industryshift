@@ -49,6 +49,13 @@ def _get_series(df: pd.DataFrame, ticker: str) -> pd.Series:
     return pd.Series(dtype=float)
 
 
+def price_return_1w(s: pd.Series) -> float:
+    """Actual 5-day price return of the ETF in %."""
+    if len(s) < 6:
+        return 0.0
+    return float((s.iloc[-1] / s.iloc[-6] - 1) * 100)
+
+
 def rs_score(s: pd.Series, b: pd.Series) -> float:
     common = s.index.intersection(b.index)
     if len(common) < 65:
@@ -124,13 +131,14 @@ def compute(sectors: dict, benchmark: str, region: str, history: list, today: st
 
     bench_close = _get_series(close, benchmark)
 
-    rs_raw, vol_raw, tech_raw = [], [], []
+    rs_raw, vol_raw, tech_raw, price1w_raw = [], [], [], []
     for ticker in sectors:
         s = _get_series(close, ticker)
         v = _get_series(vol, ticker)
         rs_raw.append(rs_score(s, bench_close))
         vol_raw.append(volume_score(v))
         tech_raw.append(technical_score(s))
+        price1w_raw.append(price_return_1w(s))
 
     rs_n = normalize(rs_raw)
     vol_n = normalize(vol_raw)
@@ -153,6 +161,7 @@ def compute(sectors: dict, benchmark: str, region: str, history: list, today: st
             "volume": vol_n[i],
             "technical": tech_n[i],
             "rs_pct": round(rs_raw[i], 2),
+            "price_1w": round(price1w_raw[i], 2),
             "delta_1w": d1,
             "delta_2w": d2,
             "delta_4w": d4,

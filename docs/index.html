@@ -118,12 +118,12 @@
     <div class="about">
       <p><strong>What is IndustryShift?</strong> This tool detects sector rotations in the stock market as early as possible — before a trend becomes visible in the broader market. Every Friday after close, 11 US sectors (SPDR ETFs vs. SPY) and 11 European sectors (iShares STOXX 600 ETFs vs. EXW1) are scored and ranked.</p>
       <p><strong>How the score works:</strong> Each sector is rated 0–10 across three dimensions: <strong>Relative Strength</strong> (does it outperform the market over 1 and 3 months?), <strong>Volume</strong> (is unusual capital flowing in this week?), and <strong>Technical</strong> (is it trading above MA50/MA200 and near its 52-week high?). The combined score is weighted 40% RS · 30% Volume · 30% Technical.</p>
-      <p><strong>The trend column</strong> shows week-over-week momentum across three timeframes (1W / 2W / 4W). A single green row means the sector improved this week. A <strong>double-stripe green row</strong> means all three timeframes confirm the uptrend — the strongest early rotation signal.</p>
+      <p><strong>The W/W column</strong> shows the actual 5-day price return of the ETF. Row color reflects rotation momentum: a <strong>single green row</strong> means the sector's score improved this week; a <strong>double-stripe green row</strong> means the score also improved over 2W and 4W — a confirmed rotation signal.</p>
       <div class="pills">
         <span class="pill">🟢 7–10 strong shift</span>
         <span class="pill">🟡 4–7 neutral</span>
         <span class="pill">🔴 0–4 weak</span>
-        <span class="pill">▐▌ confirmed uptrend across 1W + 2W + 4W</span>
+        <span class="pill">▐▌ score improving across 1W + 2W + 4W</span>
         <span class="pill">updated every Friday after market close</span>
       </div>
     </div>
@@ -160,17 +160,17 @@ function trendStrength(s) {
 }
 
 function trendCell(s) {
-  const d1 = s.delta_1w;
-  if (d1 === null || d1 === undefined) {
+  const p = s.price_1w;
+  if (p === null || p === undefined) {
     return `<td class="trend flat">—</td>`;
   }
-  const strong = Math.abs(d1) >= 1.5;
+  const strong = Math.abs(p) >= 2.0;
   let arrow, dir;
-  if (d1 >= 0.3)       { arrow = strong ? '⬆' : '↑'; dir = 'up'; }
-  else if (d1 <= -0.3) { arrow = strong ? '⬇' : '↓'; dir = 'down'; }
-  else                 { arrow = '→'; dir = 'flat'; }
-  const sign = d1 >= 0 ? '+' : '';
-  return `<td class="trend ${dir}">${arrow} ${sign}${d1.toFixed(1)}</td>`;
+  if (p >= 0.3)       { arrow = strong ? '⬆' : '↑'; dir = 'up'; }
+  else if (p <= -0.3) { arrow = strong ? '⬇' : '↓'; dir = 'down'; }
+  else                { arrow = '→'; dir = 'flat'; }
+  const sign = p >= 0 ? '+' : '';
+  return `<td class="trend ${dir}">${arrow} ${sign}${p.toFixed(1)}%</td>`;
 }
 
 function rowClass(s) {
