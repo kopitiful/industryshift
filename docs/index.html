@@ -243,12 +243,14 @@ function renderTable(sectors, panelId, techSub) {
     return;
   }
 
-  const surgeTicker = sectors.reduce((a, b) => (b.vol_surge_2w ?? 0) > (a.vol_surge_2w ?? 0) ? b : a).ticker;
+  const surgeTop3 = new Set(
+    [...sectors].sort((a, b) => (b.vol_surge_2w ?? 0) - (a.vol_surge_2w ?? 0)).slice(0, 3).map(s => s.ticker)
+  );
 
   const rows = sectors.map(s => {
     const w = (s.score / 10 * 100).toFixed(0);
     const topBadge = s.rank === 1 ? '<span class="top-badge">TOP</span>' : '';
-    const surgeBadge = s.ticker === surgeTicker ? `<span class="surge-badge" title="Biggest volume surge (2W): ${s.vol_surge_2w}×">VOL ×${s.vol_surge_2w}</span>` : '';
+    const surgeBadge = surgeTop3.has(s.ticker) ? `<span class="surge-badge" title="2W volume surge: ${s.vol_surge_2w}×">VOL ×${s.vol_surge_2w}</span>` : '';
     const isUSTech = panelId === 'panel-us' && s.ticker === 'XLK' && techSub?.length;
     const expandBtn = isUSTech
       ? `<span class="expand-btn" id="tech-expand-btn" onclick="toggleSub()">▶</span>`
