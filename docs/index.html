@@ -93,6 +93,18 @@
     .sub-lbl { font-size: 0.63rem; color: var(--muted); display: block; margin-top: 2px; }
     .mini-arrow { font-size: 0.65rem; margin-left: 2px; }
 
+    /* Tech sub-sector expand */
+    .expand-btn { cursor: pointer; font-size: 0.7rem; color: var(--accent); margin-left: 0.4rem; user-select: none; transition: transform .2s; display: inline-block; }
+    .expand-btn.open { transform: rotate(90deg); }
+    tr.subsector-row { display: none; }
+    tr.subsector-row.visible { display: table-row; }
+    tr.subsector-row td { padding: 0; border-bottom: none; }
+    .subsector-table { width: 100%; border-collapse: collapse; background: rgba(88,166,255,0.04); }
+    .subsector-table td { padding: 0.45rem 0.75rem 0.45rem 2.5rem; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
+    .subsector-table tr:last-child td { border-bottom: 1px solid var(--border); }
+    .subsector-name { font-weight: 500; display: block; }
+    .subsector-ticker { color: var(--muted); font-size: 0.68rem; font-family: monospace; }
+
     .top-badge { display: inline-block; background: var(--accent); color: #0d1117; font-size: 0.6rem; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 0.35rem; vertical-align: middle; }
 
     .g { color: var(--green); }
@@ -189,7 +201,41 @@ function rowClass(s) {
   return '';
 }
 
-function renderTable(sectors, panelId) {
+function subRow(techSub) {
+  if (!techSub?.length) return '';
+  const inner = techSub.map(s => {
+    const w = (s.score / 10 * 100).toFixed(0);
+    const sign = s.price_1w >= 0 ? '+' : '';
+    const dir = s.price_1w >= 0.3 ? 'up' : s.price_1w <= -0.3 ? 'down' : 'flat';
+    return `<tr>
+      <td style="width:2rem;text-align:center;color:var(--muted);font-size:.75rem">${s.rank}</td>
+      <td><span class="subsector-name">${s.name}</span><span class="subsector-ticker">${s.ticker}</span></td>
+      <td>
+        <div class="score-cell">
+          <span class="score-num ${cls(s.score)}" style="font-size:.9rem">${s.score.toFixed(1)}</span>
+          <div class="bar-bg"><div class="bar-fill ${bgCls(s.score)}" style="width:${w}%"></div></div>
+        </div>
+      </td>
+      <td class="trend ${dir}" style="font-size:.8rem">${s.price_1w >= 0.3 ? '↑' : s.price_1w <= -0.3 ? '↓' : '→'} ${sign}${s.price_1w.toFixed(1)}%</td>
+      <td class="sub hide-sm"><span class="sub-num ${cls(s.rs)}">${s.rs.toFixed(1)}</span><span class="sub-lbl">RS</span></td>
+      <td class="sub hide-sm"><span class="sub-num ${cls(s.volume)}">${s.volume.toFixed(1)}</span><span class="sub-lbl">Vol</span></td>
+      <td class="sub hide-sm"><span class="sub-num ${cls(s.technical)}">${s.technical.toFixed(1)}</span><span class="sub-lbl">Tech</span></td>
+    </tr>`;
+  }).join('');
+  return `<tr class="subsector-row" id="tech-sub-row">
+    <td colspan="7"><table class="subsector-table">${inner}</table></td>
+  </tr>`;
+}
+
+function toggleSub() {
+  const row = document.getElementById('tech-sub-row');
+  const btn = document.getElementById('tech-expand-btn');
+  if (!row) return;
+  row.classList.toggle('visible');
+  btn.classList.toggle('open');
+}
+
+function renderTable(sectors, panelId, techSub) {
   const el = document.getElementById(panelId);
   if (!sectors?.length) {
     el.innerHTML = '<p class="err">No data available.</p>';
@@ -199,11 +245,15 @@ function renderTable(sectors, panelId) {
   const rows = sectors.map(s => {
     const w = (s.score / 10 * 100).toFixed(0);
     const topBadge = s.rank === 1 ? '<span class="top-badge">TOP</span>' : '';
+    const isUSTech = panelId === 'panel-us' && s.ticker === 'XLK' && techSub?.length;
+    const expandBtn = isUSTech
+      ? `<span class="expand-btn" id="tech-expand-btn" onclick="toggleSub()">▶</span>`
+      : '';
 
     return `<tr class="${rowClass(s)}">
       <td class="rank">${s.rank}</td>
       <td>
-        <span class="sector-name">${s.name}${topBadge}</span>
+        <span class="sector-name">${s.name}${topBadge}${expandBtn}</span>
         <span class="ticker">${s.ticker}</span>
       </td>
       <td>
@@ -225,7 +275,7 @@ function renderTable(sectors, panelId) {
         <span class="sub-num ${cls(s.technical)}">${s.technical.toFixed(1)}</span>${miniArrow(s.delta_tech)}
         <span class="sub-lbl">Tech</span>
       </td>
-    </tr>`;
+    </tr>${isUSTech ? subRow(techSub) : ''}`;
   }).join('');
 
   el.innerHTML = `<table>
@@ -248,8 +298,8 @@ fetch('data/sectors.json')
     const dt = new Date(d.updated);
     const fmt = dt.toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Berlin' });
     document.getElementById('meta').textContent = `Last update: ${fmt} · refreshed every Friday after market close`;
-    renderTable(d.us, 'panel-us');
-    renderTable(d.eu, 'panel-eu');
+    renderTable(d.us, 'panel-us', d.tech_sub);
+    renderTable(d.eu, 'panel-eu', null);
   })
   .catch(() => {
     document.getElementById('meta').textContent = 'Could not load data.';

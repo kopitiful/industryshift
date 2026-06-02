@@ -39,6 +39,13 @@ EU_SECTORS = {
 }
 EU_BENCHMARK = "EXW1.DE"
 
+TECH_SUBSECTORS = {
+    "SMH":  "Semiconductors",
+    "IGV":  "Software",
+    "WCLD": "Cloud",
+    "CIBR": "Cybersecurity",
+}
+
 OUT_PATH = "docs/data/sectors.json"
 HISTORY_MAX = 8  # weeks to retain
 
@@ -190,6 +197,46 @@ def compute(sectors: dict, benchmark: str, region: str, history: list, today: st
     return results
 
 
+def compute_subsectors(sectors: dict, benchmark: str) -> list:
+    """Compute scores for sub-sectors, normalized within their own group."""
+    tickers = list(sectors.keys()) + [benchmark]
+    raw = yf.download(tickers, period="1y", auto_adjust=True, progress=False)
+    if isinstance(raw.columns, pd.MultiIndex):
+        close, vol = raw["Close"], raw["Volume"]
+    else:
+        close = pd.DataFrame({tickers[0]: raw["Close"]})
+        vol   = pd.DataFrame({tickers[0]: raw["Volume"]})
+
+    bench_close = _get_series(close, benchmark)
+    rs_raw, vol_raw, tech_raw, price1w_raw = [], [], [], []
+    for ticker in sectors:
+        s = _get_series(close, ticker)
+        v = _get_series(vol, ticker)
+        rs_raw.append(rs_score(s, bench_close))
+        vol_raw.append(volume_score(v))
+        tech_raw.append(technical_score(s))
+        price1w_raw.append(price_return_1w(s))
+
+    rs_n, vol_n, tech_n = normalize(rs_raw), normalize(vol_raw), normalize(tech_raw)
+    results = []
+    for i, (ticker, name) in enumerate(sectors.items()):
+        sc = round(0.35 * rs_n[i] + 0.50 * vol_n[i] + 0.15 * tech_n[i], 2)
+        results.append({
+            "ticker": ticker,
+            "name": name,
+            "score": sc,
+            "rs": rs_n[i],
+            "volume": vol_n[i],
+            "technical": tech_n[i],
+            "rs_pct": round(rs_raw[i], 2),
+            "price_1w": round(price1w_raw[i], 2),
+        })
+    results.sort(key=lambda x: x["score"], reverse=True)
+    for i, r in enumerate(results):
+        r["rank"] = i + 1
+    return results
+
+
 def main():
     history = load_history()
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -199,6 +246,9 @@ def main():
 
     print("Computing EU sectors...")
     eu = compute(EU_SECTORS, EU_BENCHMARK, "eu", history, today)
+
+    print("Computing Tech sub-sectors...")
+    tech_sub = compute_subsectors(TECH_SUBSECTORS, US_BENCHMARK)
 
     # Replace today's snapshot if it exists, then append
     def _snap(sectors):
@@ -217,6 +267,7 @@ def main():
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "us": us,
         "eu": eu,
+        "tech_sub": tech_sub,
         "history": history,
     }
 
