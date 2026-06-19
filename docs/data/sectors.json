@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-19T22:13:00Z",
+  "updated": "2026-06-19T22:44:40Z",
   "us": [
     {
       "ticker": "XLF",
@@ -80,20 +80,20 @@
     {
       "ticker": "XLRE",
       "name": "Real Estate",
-      "score": 5.01,
-      "rs": 3.99,
+      "score": 5.07,
+      "rs": 4.17,
       "volume": 5.7,
-      "technical": 5.07,
-      "rs_pct": -2.31,
-      "price_1w": -2.27,
-      "price_2w": 1.06,
+      "technical": 5.05,
+      "rs_pct": -2.14,
+      "price_1w": -2.36,
+      "price_2w": -1.22,
       "vol_surge_2w": 1.16,
-      "delta_1w": -0.16,
-      "delta_2w": -1.61,
-      "delta_4w": 3.22,
-      "delta_rs": -2.47,
+      "delta_1w": -0.1,
+      "delta_2w": -1.55,
+      "delta_4w": 3.28,
+      "delta_rs": -2.29,
       "delta_vol": 2.89,
-      "delta_tech": -4.93,
+      "delta_tech": -4.95,
       "rank": 5
     },
     {
@@ -135,25 +135,6 @@
       "rank": 7
     },
     {
-      "ticker": "XLP",
-      "name": "Consumer Staples",
-      "score": 3.57,
-      "rs": 4.29,
-      "volume": 1.24,
-      "technical": 9.68,
-      "rs_pct": -2.03,
-      "price_1w": -2.12,
-      "price_2w": 1.85,
-      "vol_surge_2w": 1.07,
-      "delta_1w": -1.68,
-      "delta_2w": -3.86,
-      "delta_4w": 3.19,
-      "delta_rs": -2.9,
-      "delta_vol": -1.28,
-      "delta_tech": -0.11,
-      "rank": 8
-    },
-    {
       "ticker": "XLV",
       "name": "Health Care",
       "score": 3.32,
@@ -170,6 +151,25 @@
       "delta_rs": -3.36,
       "delta_vol": -1.48,
       "delta_tech": -0.13,
+      "rank": 8
+    },
+    {
+      "ticker": "XLP",
+      "name": "Consumer Staples",
+      "score": 2.8,
+      "rs": 4.14,
+      "volume": 1.24,
+      "technical": 4.87,
+      "rs_pct": -2.17,
+      "price_1w": -2.31,
+      "price_2w": 1.54,
+      "vol_surge_2w": 1.07,
+      "delta_1w": -2.45,
+      "delta_2w": -4.63,
+      "delta_4w": 2.42,
+      "delta_rs": -3.05,
+      "delta_vol": -1.28,
+      "delta_tech": -4.92,
       "rank": 9
     },
     {
@@ -452,13 +452,13 @@
     {
       "ticker": "CIBR",
       "name": "Cybersecurity",
-      "score": 3.04,
-      "rs": 4.61,
+      "score": 2.56,
+      "rs": 3.24,
       "volume": 0.0,
-      "technical": 9.51,
-      "rs_pct": 1.49,
-      "price_1w": 1.18,
-      "price_2w": -8.12,
+      "technical": 9.53,
+      "rs_pct": -0.38,
+      "price_1w": -1.09,
+      "price_2w": -6.79,
       "vol_surge_2w": 0.85,
       "rank": 3
     },
@@ -467,7 +467,7 @@
       "name": "Software",
       "score": 2.5,
       "rs": 0.0,
-      "volume": 5.01,
+      "volume": 4.99,
       "technical": 0.0,
       "rs_pct": -4.78,
       "price_1w": -1.99,
@@ -1478,10 +1478,10 @@
           "t": 0.0
         },
         "XLRE": {
-          "s": 5.01,
-          "r": 3.99,
+          "s": 5.07,
+          "r": 4.17,
           "v": 5.7,
-          "t": 5.07
+          "t": 5.05
         },
         "XLU": {
           "s": 4.9,
@@ -1495,17 +1495,17 @@
           "v": 0.0,
           "t": 9.83
         },
-        "XLP": {
-          "s": 3.57,
-          "r": 4.29,
-          "v": 1.24,
-          "t": 9.68
-        },
         "XLV": {
           "s": 3.32,
           "r": 3.94,
           "v": 0.98,
           "t": 9.69
+        },
+        "XLP": {
+          "s": 2.8,
+          "r": 4.14,
+          "v": 1.24,
+          "t": 4.87
         },
         "XLY": {
           "s": 2.2,
