@@ -32,7 +32,20 @@
     header { margin-bottom: 1.75rem; }
     h1 { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; }
     h1 em { color: var(--accent); font-style: normal; }
-    .meta { color: var(--muted); font-size: 0.8rem; margin-top: 0.3rem; }
+    .meta-row { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.35rem; flex-wrap: wrap; }
+    .meta { color: var(--muted); font-size: 0.8rem; }
+    .refresh-btn {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.75rem; color: var(--muted); background: var(--surface);
+      border: 1px solid var(--border); border-radius: 5px;
+      padding: 2px 10px; cursor: pointer; text-decoration: none;
+      transition: color .15s, border-color .15s;
+    }
+    .refresh-btn:hover { color: var(--text); border-color: var(--muted); }
+    .refresh-btn.spinning .spin { display: inline-block; animation: spin .7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .gh-link { font-size: 0.75rem; color: var(--muted); text-decoration: none; }
+    .gh-link:hover { color: var(--accent); }
 
     .about {
       margin-top: 1rem;
@@ -128,7 +141,13 @@
 <div class="container">
   <header>
     <h1>Industry<em>Shift</em> Radar</h1>
-    <p class="meta" id="meta">Loading…</p>
+    <div class="meta-row">
+      <span class="meta" id="meta">Loading…</span>
+      <button class="refresh-btn" id="refresh-btn" onclick="refreshData()">
+        <span class="spin">↻</span> Refresh
+      </button>
+      <a class="gh-link" href="https://github.com/kopitiful/industryshift/actions/workflows/weekly.yml" target="_blank">▶ Trigger update</a>
+    </div>
     <div class="about">
       <p><strong>What is IndustryShift?</strong> This tool detects sector rotations in the stock market as early as possible — before a trend becomes visible in the broader market. Every Friday after close, 11 US sectors (SPDR ETFs vs. SPY) and 11 European sectors (iShares STOXX 600 ETFs vs. EXW1) are scored and ranked.</p>
       <p><strong>How the score works:</strong> Each sector is rated 0–10 across three dimensions optimised for <em>early</em> detection: <strong>Volume</strong> (50%) — is unusual capital flowing in this week, before price reacts? <strong>Short-term RS</strong> (35%) — is the sector outperforming the market over the last 1 and 3 weeks? <strong>Technical</strong> (15%) — is it above MA50/MA200 and near its 52-week high? Long-term RS (months) is intentionally excluded as it confirms existing trends, not emerging ones.</p>
@@ -304,21 +323,36 @@ function renderTable(sectors, panelId, techSub) {
   </table>`;
 }
 
-fetch('data/sectors.json')
-  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(d => {
-    const dt = new Date(d.updated);
-    const fmt = dt.toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Berlin' });
-    document.getElementById('meta').textContent = `Last update: ${fmt} · refreshed every Friday after market close`;
-    renderTable(d.us, 'panel-us', d.tech_sub);
-    renderTable(d.eu, 'panel-eu', null);
-  })
-  .catch(() => {
-    document.getElementById('meta').textContent = 'Could not load data.';
-    ['panel-us', 'panel-eu'].forEach(id => {
-      document.getElementById(id).innerHTML = '<p class="err">Failed to load data. Please try again later.</p>';
+function loadData(bust) {
+  const url = bust ? `data/sectors.json?t=${Date.now()}` : 'data/sectors.json';
+  return fetch(url)
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(d => {
+      const dt = new Date(d.updated);
+      const fmt = dt.toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'Europe/Berlin' });
+      document.getElementById('meta').textContent = `Last update: ${fmt} · refreshed every Friday after market close`;
+      renderTable(d.us, 'panel-us', d.tech_sub);
+      renderTable(d.eu, 'panel-eu', null);
+    })
+    .catch(() => {
+      document.getElementById('meta').textContent = 'Could not load data.';
+      ['panel-us', 'panel-eu'].forEach(id => {
+        document.getElementById(id).innerHTML = '<p class="err">Failed to load data. Please try again later.</p>';
+      });
     });
+}
+
+function refreshData() {
+  const btn = document.getElementById('refresh-btn');
+  btn.classList.add('spinning');
+  btn.disabled = true;
+  loadData(true).finally(() => {
+    btn.classList.remove('spinning');
+    btn.disabled = false;
   });
+}
+
+loadData(false);
 </script>
 </body>
 </html>

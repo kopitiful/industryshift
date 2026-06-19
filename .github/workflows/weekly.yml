@@ -3,6 +3,7 @@ name: Weekly Sector Update
 on:
   schedule:
     - cron: '0 22 * * 5'  # Freitags 22:00 UTC (nach US-Börsenschluss)
+    - cron: '0 10 * * 6'  # Samstags 10:00 UTC als Backup falls Freitag übersprungen
   workflow_dispatch:       # Manueller Start jederzeit möglich
 
 permissions:
