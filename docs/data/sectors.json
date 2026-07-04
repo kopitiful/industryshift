@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T22:55:27Z",
+  "updated": "2026-07-04T11:26:22Z",
   "us": [
     {
       "ticker": "XLV",
@@ -12,12 +12,12 @@
       "price_1w": 5.21,
       "price_2w": 9.12,
       "vol_surge_2w": 1.08,
-      "delta_1w": 0.99,
-      "delta_2w": 0.97,
+      "delta_1w": 0.0,
+      "delta_2w": 0.99,
       "delta_4w": 6.0,
       "delta_rs": 0.0,
-      "delta_vol": 1.94,
-      "delta_tech": 0.1,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
       "rank": 1
     },
     {
@@ -31,12 +31,12 @@
       "price_1w": 0.2,
       "price_2w": 2.51,
       "vol_surge_2w": 1.13,
-      "delta_1w": 1.74,
-      "delta_2w": 1.93,
-      "delta_4w": 2.96,
-      "delta_rs": -3.37,
-      "delta_vol": 5.85,
-      "delta_tech": -0.02,
+      "delta_1w": 0.0,
+      "delta_2w": 1.74,
+      "delta_4w": 2.97,
+      "delta_rs": 0.0,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
       "rank": 2
     },
     {
@@ -50,12 +50,12 @@
       "price_1w": 3.33,
       "price_2w": 1.61,
       "vol_surge_2w": 1.11,
-      "delta_1w": 3.26,
-      "delta_2w": 3.1,
-      "delta_4w": 5.7,
-      "delta_rs": 4.96,
-      "delta_vol": 1.62,
-      "delta_tech": 4.79,
+      "delta_1w": 0.0,
+      "delta_2w": 3.26,
+      "delta_4w": 5.59,
+      "delta_rs": 0.0,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
       "rank": 3
     },
     {
@@ -69,10 +69,10 @@
       "price_1w": 3.81,
       "price_2w": 0.63,
       "vol_surge_2w": 1.35,
-      "delta_1w": 1.94,
-      "delta_2w": 1.55,
-      "delta_4w": 1.28,
-      "delta_rs": 5.53,
+      "delta_1w": 0.0,
+      "delta_2w": 1.94,
+      "delta_4w": 1.4,
+      "delta_rs": 0.0,
       "delta_vol": 0.0,
       "delta_tech": 0.0,
       "rank": 4
@@ -88,12 +88,12 @@
       "price_1w": 4.06,
       "price_2w": 3.27,
       "vol_surge_2w": 0.87,
-      "delta_1w": 2.76,
-      "delta_2w": 3.24,
+      "delta_1w": 0.0,
+      "delta_2w": 2.76,
       "delta_4w": -0.22,
-      "delta_rs": 1.89,
-      "delta_vol": 4.13,
-      "delta_tech": 0.18,
+      "delta_rs": 0.0,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
       "rank": 5
     },
     {
@@ -107,12 +107,12 @@
       "price_1w": -0.2,
       "price_2w": 3.58,
       "vol_surge_2w": 1.15,
-      "delta_1w": -0.75,
-      "delta_2w": -0.26,
+      "delta_1w": 0.0,
+      "delta_2w": -0.75,
       "delta_4w": 1.69,
-      "delta_rs": -3.55,
-      "delta_vol": 0.98,
-      "delta_tech": -0.01,
+      "delta_rs": 0.0,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
       "rank": 6
     },
     {
@@ -126,12 +126,12 @@
       "price_1w": -0.11,
       "price_2w": 2.65,
       "vol_surge_2w": 0.9,
-      "delta_1w": -0.82,
-      "delta_2w": 0.44,
+      "delta_1w": 0.0,
+      "delta_2w": -0.82,
       "delta_4w": -0.21,
-      "delta_rs": -1.44,
-      "delta_vol": -0.62,
-      "delta_tech": -0.04,
+      "delta_rs": 0.0,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
       "rank": 7
     },
     {
@@ -145,12 +145,12 @@
       "price_1w": 1.25,
       "price_2w": 2.27,
       "vol_surge_2w": 0.96,
-      "delta_1w": -0.51,
-      "delta_2w": -0.61,
+      "delta_1w": 0.0,
+      "delta_2w": -0.51,
       "delta_4w": 2.87,
-      "delta_rs": -1.95,
-      "delta_vol": 0.32,
-      "delta_tech": 0.05,
+      "delta_rs": 0.0,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
       "rank": 8
     },
     {
@@ -164,12 +164,12 @@
       "price_1w": 0.33,
       "price_2w": 0.35,
       "vol_surge_2w": 0.86,
-      "delta_1w": 1.67,
-      "delta_2w": 1.84,
+      "delta_1w": 0.0,
+      "delta_2w": 1.67,
       "delta_4w": -0.23,
-      "delta_rs": 1.61,
-      "delta_vol": 2.21,
-      "delta_tech": 0.01,
+      "delta_rs": 0.0,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
       "rank": 9
     },
     {
@@ -183,12 +183,12 @@
       "price_1w": -2.16,
       "price_2w": -2.69,
       "vol_surge_2w": 0.82,
-      "delta_1w": 0.58,
-      "delta_2w": 1.02,
+      "delta_1w": 0.0,
+      "delta_2w": 0.58,
       "delta_4w": -1.3,
-      "delta_rs": 3.14,
-      "delta_vol": -1.0,
-      "delta_tech": -0.1,
+      "delta_rs": 0.0,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
       "rank": 10
     },
     {
@@ -202,12 +202,12 @@
       "price_1w": -1.61,
       "price_2w": -1.95,
       "vol_surge_2w": 0.79,
-      "delta_1w": -0.83,
-      "delta_2w": -1.25,
+      "delta_1w": 0.0,
+      "delta_2w": -0.83,
       "delta_4w": -1.29,
-      "delta_rs": -0.58,
-      "delta_vol": -1.19,
-      "delta_tech": -0.16,
+      "delta_rs": 0.0,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
       "rank": 11
     }
   ],
@@ -215,40 +215,59 @@
     {
       "ticker": "EXV4.DE",
       "name": "Banks",
-      "score": 7.42,
-      "rs": 8.83,
+      "score": 7.5,
+      "rs": 9.05,
       "volume": 5.69,
       "technical": 9.92,
-      "rs_pct": 2.25,
-      "price_1w": 3.49,
-      "price_2w": 9.45,
+      "rs_pct": 1.3,
+      "price_1w": 3.07,
+      "price_2w": 8.88,
       "vol_surge_2w": 1.39,
-      "delta_1w": -1.24,
-      "delta_2w": -1.22,
-      "delta_4w": 5.55,
-      "delta_rs": -1.17,
-      "delta_vol": -1.67,
-      "delta_tech": 0.07,
+      "delta_1w": 0.08,
+      "delta_2w": -1.16,
+      "delta_4w": 5.28,
+      "delta_rs": 0.22,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
       "rank": 1
     },
     {
       "ticker": "EXI3.DE",
       "name": "Basic Resources",
-      "score": 6.05,
-      "rs": 6.82,
+      "score": 6.2,
+      "rs": 7.24,
       "volume": 4.36,
-      "technical": 9.9,
-      "rs_pct": -0.55,
-      "price_1w": 0.09,
-      "price_2w": 2.16,
+      "technical": 9.92,
+      "rs_pct": -1.04,
+      "price_1w": 1.07,
+      "price_2w": 2.7,
       "vol_surge_2w": 0.82,
-      "delta_1w": -0.06,
-      "delta_2w": -0.18,
+      "delta_1w": 0.15,
+      "delta_2w": 0.09,
       "delta_4w": 1.66,
-      "delta_rs": -0.87,
-      "delta_vol": 0.5,
-      "delta_tech": -0.04,
+      "delta_rs": 0.42,
+      "delta_vol": 0.0,
+      "delta_tech": 0.02,
       "rank": 2
+    },
+    {
+      "ticker": "EXH4.DE",
+      "name": "Industrials",
+      "score": 5.85,
+      "rs": 10.0,
+      "volume": 1.7,
+      "technical": 10.0,
+      "rs_pct": 2.52,
+      "price_1w": 5.55,
+      "price_2w": 3.08,
+      "vol_surge_2w": 0.73,
+      "delta_1w": 0.62,
+      "delta_2w": 0.31,
+      "delta_4w": 0.65,
+      "delta_rs": 1.78,
+      "delta_vol": 0.0,
+      "delta_tech": 0.0,
+      "rank": 3
     },
     {
       "ticker": "EXV2.DE",
@@ -256,168 +275,149 @@
       "score": 5.72,
       "rs": 0.0,
       "volume": 10.0,
-      "technical": 4.78,
-      "rs_pct": -10.03,
-      "price_1w": -5.16,
-      "price_2w": -5.7,
+      "technical": 4.81,
+      "rs_pct": -10.37,
+      "price_1w": -3.34,
+      "price_2w": -4.73,
       "vol_surge_2w": 1.71,
-      "delta_1w": 1.53,
-      "delta_2w": 1.37,
-      "delta_4w": 4.84,
-      "delta_rs": -3.06,
-      "delta_vol": 5.27,
-      "delta_tech": -0.27,
-      "rank": 3
-    },
-    {
-      "ticker": "EXH4.DE",
-      "name": "Industrials",
-      "score": 5.23,
-      "rs": 8.22,
-      "volume": 1.7,
-      "technical": 10.0,
-      "rs_pct": 1.4,
-      "price_1w": 2.53,
-      "price_2w": 1.38,
-      "vol_surge_2w": 0.73,
-      "delta_1w": -0.31,
-      "delta_2w": -0.57,
-      "delta_4w": 0.21,
-      "delta_rs": 3.01,
-      "delta_vol": -2.74,
-      "delta_tech": 0.05,
+      "delta_1w": 0.0,
+      "delta_2w": 1.53,
+      "delta_4w": 4.96,
+      "delta_rs": 0.0,
+      "delta_vol": 0.0,
+      "delta_tech": 0.03,
       "rank": 4
     },
     {
       "ticker": "EXV1.DE",
       "name": "Automobiles",
-      "score": 5.0,
-      "rs": 10.0,
+      "score": 4.96,
+      "rs": 9.9,
       "volume": 0.0,
       "technical": 10.0,
-      "rs_pct": 3.88,
-      "price_1w": 2.19,
-      "price_2w": 2.34,
+      "rs_pct": 2.4,
+      "price_1w": 3.72,
+      "price_2w": 2.71,
       "vol_surge_2w": 0.18,
-      "delta_1w": 0.51,
-      "delta_2w": 0.41,
-      "delta_4w": -0.21,
-      "delta_rs": 1.45,
+      "delta_1w": -0.04,
+      "delta_2w": 0.47,
+      "delta_4w": -0.25,
+      "delta_rs": -0.1,
       "delta_vol": 0.0,
-      "delta_tech": 0.03,
+      "delta_tech": 0.0,
       "rank": 5
     },
     {
       "ticker": "EXH8.DE",
       "name": "Food & Beverage",
-      "score": 3.93,
-      "rs": 6.0,
+      "score": 4.2,
+      "rs": 6.78,
       "volume": 0.66,
-      "technical": 9.99,
-      "rs_pct": -1.68,
-      "price_1w": -0.21,
-      "price_2w": 1.39,
+      "technical": 10.0,
+      "rs_pct": -1.63,
+      "price_1w": 1.87,
+      "price_2w": 3.27,
       "vol_surge_2w": 0.3,
-      "delta_1w": -0.65,
-      "delta_2w": -0.97,
-      "delta_4w": -1.98,
-      "delta_rs": -1.71,
-      "delta_vol": -0.11,
-      "delta_tech": -0.01,
+      "delta_1w": 0.27,
+      "delta_2w": -0.38,
+      "delta_4w": -1.53,
+      "delta_rs": 0.78,
+      "delta_vol": 0.0,
+      "delta_tech": 0.01,
       "rank": 6
     },
     {
       "ticker": "EXV3.DE",
       "name": "Technology",
-      "score": 3.79,
-      "rs": 4.21,
+      "score": 4.19,
+      "rs": 5.34,
       "volume": 1.69,
-      "technical": 9.81,
-      "rs_pct": -4.18,
-      "price_1w": -0.75,
-      "price_2w": -4.08,
+      "technical": 9.87,
+      "rs_pct": -3.49,
+      "price_1w": 1.92,
+      "price_2w": -2.04,
       "vol_surge_2w": 0.77,
-      "delta_1w": -1.55,
-      "delta_2w": -1.47,
-      "delta_4w": -1.21,
-      "delta_rs": 0.35,
-      "delta_vol": -3.34,
-      "delta_tech": -0.05,
+      "delta_1w": 0.4,
+      "delta_2w": -1.15,
+      "delta_4w": -0.79,
+      "delta_rs": 1.13,
+      "delta_vol": 0.0,
+      "delta_tech": 0.06,
       "rank": 7
     },
     {
       "ticker": "EXH7.DE",
       "name": "Health Care",
-      "score": 3.76,
-      "rs": 6.32,
+      "score": 3.52,
+      "rs": 5.65,
       "volume": 0.17,
-      "technical": 9.73,
-      "rs_pct": -1.24,
-      "price_1w": 0.55,
-      "price_2w": 1.54,
+      "technical": 9.71,
+      "rs_pct": -3.08,
+      "price_1w": -0.21,
+      "price_2w": 2.46,
       "vol_surge_2w": 0.56,
-      "delta_1w": -3.3,
-      "delta_2w": -3.06,
-      "delta_4w": -4.54,
-      "delta_rs": -3.35,
-      "delta_vol": -4.24,
-      "delta_tech": -0.07,
+      "delta_1w": -0.24,
+      "delta_2w": -3.54,
+      "delta_4w": -3.99,
+      "delta_rs": -0.67,
+      "delta_vol": 0.0,
+      "delta_tech": -0.02,
       "rank": 8
     },
     {
       "ticker": "EXV6.DE",
       "name": "Energy",
-      "score": 3.1,
-      "rs": 2.91,
+      "score": 3.15,
+      "rs": 3.03,
       "volume": 2.73,
-      "technical": 4.77,
-      "rs_pct": -5.98,
-      "price_1w": -0.4,
-      "price_2w": -6.17,
+      "technical": 4.81,
+      "rs_pct": -6.46,
+      "price_1w": 1.5,
+      "price_2w": -3.25,
       "vol_surge_2w": 1.36,
-      "delta_1w": -2.88,
-      "delta_2w": -2.62,
-      "delta_4w": -1.21,
-      "delta_rs": 2.18,
-      "delta_vol": -7.27,
-      "delta_tech": -0.07,
+      "delta_1w": 0.05,
+      "delta_2w": -2.83,
+      "delta_4w": 0.32,
+      "delta_rs": 0.12,
+      "delta_vol": 0.0,
+      "delta_tech": 0.04,
       "rank": 9
-    },
-    {
-      "ticker": "EXV5.DE",
-      "name": "Telecom",
-      "score": 2.19,
-      "rs": 5.12,
-      "volume": 0.79,
-      "technical": 0.0,
-      "rs_pct": -2.91,
-      "price_1w": 1.72,
-      "price_2w": 1.22,
-      "vol_surge_2w": 1.05,
-      "delta_1w": -3.69,
-      "delta_2w": -3.92,
-      "delta_4w": -1.84,
-      "delta_rs": 1.69,
-      "delta_vol": -8.57,
-      "delta_tech": 0.0,
-      "rank": 10
     },
     {
       "ticker": "EXH1.DE",
       "name": "Utilities",
-      "score": 2.08,
-      "rs": 2.31,
+      "score": 2.75,
+      "rs": 4.2,
       "volume": 1.1,
-      "technical": 4.84,
-      "rs_pct": -6.82,
-      "price_1w": 0.04,
-      "price_2w": -1.3,
+      "technical": 4.86,
+      "rs_pct": -4.95,
+      "price_1w": 2.73,
+      "price_2w": -2.21,
       "vol_surge_2w": 0.44,
-      "delta_1w": 0.27,
-      "delta_2w": -0.67,
-      "delta_4w": 0.24,
-      "delta_rs": 2.31,
-      "delta_vol": -1.06,
+      "delta_1w": 0.67,
+      "delta_2w": 0.94,
+      "delta_4w": 0.1,
+      "delta_rs": 1.89,
+      "delta_vol": 0.0,
+      "delta_tech": 0.02,
+      "rank": 10
+    },
+    {
+      "ticker": "EXV5.DE",
+      "name": "Telecom",
+      "score": 2.4,
+      "rs": 5.74,
+      "volume": 0.79,
+      "technical": 0.0,
+      "rs_pct": -2.97,
+      "price_1w": 3.02,
+      "price_2w": 1.38,
+      "vol_surge_2w": 1.05,
+      "delta_1w": 0.21,
+      "delta_2w": -3.48,
+      "delta_4w": -1.78,
+      "delta_rs": 0.62,
+      "delta_vol": 0.0,
       "delta_tech": 0.0,
       "rank": 11
     }
@@ -477,145 +477,6 @@
     }
   ],
   "history": [
-    {
-      "date": "2026-06-02",
-      "us": {
-        "XLB": {
-          "s": 7.27,
-          "r": 2.27,
-          "v": 10.0,
-          "t": 9.83
-        },
-        "XLK": {
-          "s": 6.96,
-          "r": 10.0,
-          "v": 3.93,
-          "t": 10.0
-        },
-        "XLY": {
-          "s": 3.92,
-          "r": 1.17,
-          "v": 4.1,
-          "t": 9.73
-        },
-        "XLP": {
-          "s": 3.16,
-          "r": 0.78,
-          "v": 4.34,
-          "t": 4.78
-        },
-        "XLF": {
-          "s": 3.02,
-          "r": 2.34,
-          "v": 2.97,
-          "t": 4.79
-        },
-        "XLV": {
-          "s": 3.02,
-          "r": 2.8,
-          "v": 4.08,
-          "t": 0.0
-        },
-        "XLE": {
-          "s": 2.87,
-          "r": 3.06,
-          "v": 2.15,
-          "t": 4.84
-        },
-        "XLI": {
-          "s": 2.41,
-          "r": 2.19,
-          "v": 0.32,
-          "t": 9.88
-        },
-        "XLU": {
-          "s": 2.13,
-          "r": 0.0,
-          "v": 4.24,
-          "t": 0.04
-        },
-        "XLC": {
-          "s": 1.96,
-          "r": 1.0,
-          "v": 3.18,
-          "t": 0.15
-        },
-        "XLRE": {
-          "s": 1.59,
-          "r": 0.31,
-          "v": 0.0,
-          "t": 9.86
-        }
-      },
-      "eu": {
-        "EXI3.DE": {
-          "s": 7.92,
-          "r": 4.18,
-          "v": 10.0,
-          "t": 9.69
-        },
-        "EXV3.DE": {
-          "s": 5.46,
-          "r": 10.0,
-          "v": 0.92,
-          "t": 10.0
-        },
-        "EXV6.DE": {
-          "s": 4.49,
-          "r": 6.66,
-          "v": 1.31,
-          "t": 10.0
-        },
-        "EXV1.DE": {
-          "s": 4.14,
-          "r": 4.64,
-          "v": 2.03,
-          "t": 9.99
-        },
-        "EXH8.DE": {
-          "s": 3.74,
-          "r": 5.44,
-          "v": 0.76,
-          "t": 9.72
-        },
-        "EXH7.DE": {
-          "s": 3.48,
-          "r": 2.93,
-          "v": 3.48,
-          "t": 4.75
-        },
-        "EXH4.DE": {
-          "s": 3.14,
-          "r": 3.76,
-          "v": 0.67,
-          "t": 9.95
-        },
-        "EXV2.DE": {
-          "s": 3.1,
-          "r": 3.97,
-          "v": 0.42,
-          "t": 9.99
-        },
-        "EXV5.DE": {
-          "s": 2.18,
-          "r": 4.21,
-          "v": 0.0,
-          "t": 4.72
-        },
-        "EXH1.DE": {
-          "s": 1.7,
-          "r": 1.0,
-          "v": 1.19,
-          "t": 5.04
-        },
-        "EXV4.DE": {
-          "s": 1.05,
-          "r": 0.0,
-          "v": 2.1,
-          "t": 0.0
-        }
-      }
-    },
     {
       "date": "2026-06-05",
       "us": {
@@ -1586,6 +1447,145 @@
           "r": 2.31,
           "v": 1.1,
           "t": 4.84
+        }
+      }
+    },
+    {
+      "date": "2026-07-04",
+      "us": {
+        "XLV": {
+          "s": 9.32,
+          "r": 10.0,
+          "v": 8.64,
+          "t": 10.0
+        },
+        "XLRE": {
+          "s": 8.03,
+          "r": 4.45,
+          "v": 9.97,
+          "t": 9.94
+        },
+        "XLY": {
+          "s": 7.9,
+          "r": 7.29,
+          "v": 9.22,
+          "t": 4.93
+        },
+        "XLC": {
+          "s": 6.94,
+          "r": 5.53,
+          "v": 10.0,
+          "t": 0.0
+        },
+        "XLF": {
+          "s": 6.77,
+          "r": 9.16,
+          "v": 4.13,
+          "t": 9.97
+        },
+        "XLU": {
+          "s": 6.59,
+          "r": 6.28,
+          "v": 5.82,
+          "t": 9.86
+        },
+        "XLI": {
+          "s": 6.12,
+          "r": 8.1,
+          "v": 3.59,
+          "t": 9.96
+        },
+        "XLP": {
+          "s": 5.67,
+          "r": 4.89,
+          "v": 4.98,
+          "t": 9.78
+        },
+        "XLB": {
+          "s": 5.49,
+          "r": 6.77,
+          "v": 3.28,
+          "t": 9.89
+        },
+        "XLK": {
+          "s": 3.59,
+          "r": 4.37,
+          "v": 1.26,
+          "t": 9.57
+        },
+        "XLE": {
+          "s": 0.67,
+          "r": 0.0,
+          "v": 0.0,
+          "t": 4.49
+        }
+      },
+      "eu": {
+        "EXV4.DE": {
+          "s": 7.5,
+          "r": 9.05,
+          "v": 5.69,
+          "t": 9.92
+        },
+        "EXI3.DE": {
+          "s": 6.2,
+          "r": 7.24,
+          "v": 4.36,
+          "t": 9.92
+        },
+        "EXH4.DE": {
+          "s": 5.85,
+          "r": 10.0,
+          "v": 1.7,
+          "t": 10.0
+        },
+        "EXV2.DE": {
+          "s": 5.72,
+          "r": 0.0,
+          "v": 10.0,
+          "t": 4.81
+        },
+        "EXV1.DE": {
+          "s": 4.96,
+          "r": 9.9,
+          "v": 0.0,
+          "t": 10.0
+        },
+        "EXH8.DE": {
+          "s": 4.2,
+          "r": 6.78,
+          "v": 0.66,
+          "t": 10.0
+        },
+        "EXV3.DE": {
+          "s": 4.19,
+          "r": 5.34,
+          "v": 1.69,
+          "t": 9.87
+        },
+        "EXH7.DE": {
+          "s": 3.52,
+          "r": 5.65,
+          "v": 0.17,
+          "t": 9.71
+        },
+        "EXV6.DE": {
+          "s": 3.15,
+          "r": 3.03,
+          "v": 2.73,
+          "t": 4.81
+        },
+        "EXH1.DE": {
+          "s": 2.75,
+          "r": 4.2,
+          "v": 1.1,
+          "t": 4.86
+        },
+        "EXV5.DE": {
+          "s": 2.4,
+          "r": 5.74,
+          "v": 0.79,
+          "t": 0.0
         }
       }
     }
