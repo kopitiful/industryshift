@@ -26,16 +26,16 @@ US_BENCHMARK = "SPY"
 
 EU_SECTORS = {
     "EXV3.DE": "Technology",
-    "EXV4.DE": "Banks",
-    "EXH7.DE": "Health Care",
-    "EXV6.DE": "Energy",
-    "EXV1.DE": "Automobiles",
-    "EXI3.DE": "Basic Resources",
-    "EXV5.DE": "Telecom",
-    "EXV2.DE": "Insurance",
-    "EXH1.DE": "Utilities",
-    "EXH8.DE": "Food & Beverage",
-    "EXH4.DE": "Industrials",
+    "EXV1.DE": "Banks",
+    "EXV4.DE": "Health Care",
+    "EXH1.DE": "Oil & Gas",
+    "EXV5.DE": "Automobiles & Parts",
+    "EXV6.DE": "Basic Resources",
+    "EXV2.DE": "Telecommunications",
+    "EXH5.DE": "Insurance",
+    "EXH9.DE": "Utilities",
+    "EXH3.DE": "Food & Beverage",
+    "EXH4.DE": "Industrial Goods & Services",
 }
 EU_BENCHMARK = "EXW1.DE"
 
