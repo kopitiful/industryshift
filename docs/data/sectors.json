@@ -1,213 +1,213 @@
 {
-  "updated": "2026-08-03T13:06:08Z",
+  "updated": "2026-08-03T18:30:31Z",
   "us": [
     {
       "ticker": "XLP",
       "name": "Consumer Staples",
-      "score": 8.58,
-      "rs": 6.01,
+      "score": 7.96,
+      "rs": 4.26,
       "volume": 10.0,
-      "technical": 9.84,
-      "rs_pct": 1.08,
-      "price_1w": 1.09,
-      "price_2w": -0.16,
+      "technical": 9.81,
+      "rs_pct": -1.89,
+      "price_1w": -0.5,
+      "price_2w": 0.08,
       "vol_surge_2w": 1.04,
-      "delta_1w": 0.0,
-      "delta_2w": 4.03,
-      "delta_4w": 3.1,
-      "delta_rs": 0.0,
+      "delta_1w": -0.62,
+      "delta_2w": -0.62,
+      "delta_4w": 3.41,
+      "delta_rs": -1.75,
       "delta_vol": 0.0,
-      "delta_tech": 0.0,
+      "delta_tech": -0.03,
       "rank": 1
     },
     {
       "ticker": "XLRE",
       "name": "Real Estate",
-      "score": 5.53,
-      "rs": 4.13,
-      "volume": 5.18,
-      "technical": 9.96,
-      "rs_pct": -0.28,
-      "price_1w": -1.92,
-      "price_2w": -0.77,
-      "vol_surge_2w": 0.97,
-      "delta_1w": 0.0,
-      "delta_2w": -0.5,
-      "delta_4w": 0.54,
-      "delta_rs": 0.0,
-      "delta_vol": 0.0,
-      "delta_tech": 0.0,
-      "rank": 2
-    },
-    {
-      "ticker": "XLF",
-      "name": "Financials",
-      "score": 4.98,
-      "rs": 6.78,
-      "volume": 2.21,
-      "technical": 10.0,
-      "rs_pct": 1.64,
-      "price_1w": 1.12,
-      "price_2w": 1.21,
-      "vol_surge_2w": 0.94,
-      "delta_1w": 0.0,
-      "delta_2w": -1.52,
-      "delta_4w": -0.83,
-      "delta_rs": 0.0,
-      "delta_vol": 0.0,
-      "delta_tech": 0.0,
-      "rank": 3
-    },
-    {
-      "ticker": "XLE",
-      "name": "Energy",
-      "score": 4.98,
-      "rs": 10.0,
-      "volume": 0.0,
-      "technical": 9.85,
-      "rs_pct": 3.98,
-      "price_1w": -0.12,
-      "price_2w": 3.24,
-      "vol_surge_2w": 0.92,
-      "delta_1w": 0.0,
-      "delta_2w": -4.35,
-      "delta_4w": -1.47,
-      "delta_rs": 0.0,
-      "delta_vol": 0.0,
-      "delta_tech": 0.0,
-      "rank": 4
-    },
-    {
-      "ticker": "XLV",
-      "name": "Health Care",
-      "score": 4.42,
-      "rs": 5.22,
-      "volume": 2.22,
-      "technical": 9.92,
-      "rs_pct": 0.5,
-      "price_1w": -0.01,
-      "price_2w": 0.91,
-      "vol_surge_2w": 0.78,
-      "delta_1w": 0.0,
-      "delta_2w": 1.38,
-      "delta_4w": -3.51,
-      "delta_rs": 0.0,
-      "delta_vol": 0.0,
-      "delta_tech": 0.0,
-      "rank": 5
-    },
-    {
-      "ticker": "XLB",
-      "name": "Materials",
-      "score": 3.81,
-      "rs": 2.76,
-      "volume": 4.18,
-      "technical": 5.0,
-      "rs_pct": -1.29,
-      "price_1w": -1.62,
+      "score": 7.24,
+      "rs": 4.07,
+      "volume": 8.65,
+      "technical": 9.94,
+      "rs_pct": -2.02,
+      "price_1w": -1.35,
       "price_2w": -0.2,
-      "vol_surge_2w": 1.06,
-      "delta_1w": 0.0,
-      "delta_2w": -3.88,
-      "delta_4w": -1.0,
-      "delta_rs": 0.0,
-      "delta_vol": 0.0,
-      "delta_tech": 0.0,
-      "rank": 6
-    },
-    {
-      "ticker": "XLI",
-      "name": "Industrials",
-      "score": 3.71,
-      "rs": 2.64,
-      "volume": 2.6,
-      "technical": 9.9,
-      "rs_pct": -1.37,
-      "price_1w": -1.54,
-      "price_2w": 0.24,
-      "vol_surge_2w": 0.92,
-      "delta_1w": 0.0,
-      "delta_2w": -2.4,
-      "delta_4w": -0.87,
-      "delta_rs": 0.0,
-      "delta_vol": 0.0,
-      "delta_tech": 0.0,
-      "rank": 7
+      "vol_surge_2w": 1.04,
+      "delta_1w": 1.71,
+      "delta_2w": 1.71,
+      "delta_4w": 1.21,
+      "delta_rs": -0.06,
+      "delta_vol": 3.47,
+      "delta_tech": -0.02,
+      "rank": 2
     },
     {
       "ticker": "XLY",
       "name": "Consumer Discret.",
-      "score": 3.66,
-      "rs": 8.02,
-      "volume": 0.23,
-      "technical": 4.94,
-      "rs_pct": 2.54,
-      "price_1w": 6.11,
-      "price_2w": 0.56,
-      "vol_surge_2w": 0.98,
-      "delta_1w": 0.0,
-      "delta_2w": -1.34,
-      "delta_4w": -4.96,
-      "delta_rs": 0.0,
-      "delta_vol": 0.0,
-      "delta_tech": 0.0,
-      "rank": 8
+      "score": 6.37,
+      "rs": 10.0,
+      "volume": 2.81,
+      "technical": 9.79,
+      "rs_pct": 2.23,
+      "price_1w": 6.45,
+      "price_2w": 2.95,
+      "vol_surge_2w": 0.97,
+      "delta_1w": 2.71,
+      "delta_2w": 2.71,
+      "delta_4w": 1.37,
+      "delta_rs": 1.98,
+      "delta_vol": 2.58,
+      "delta_tech": 4.85,
+      "rank": 3
     },
     {
       "ticker": "XLK",
       "name": "Technology",
-      "score": 3.63,
-      "rs": 0.42,
-      "volume": 5.56,
-      "technical": 4.69,
-      "rs_pct": -2.98,
-      "price_1w": -0.3,
-      "price_2w": -0.14,
-      "vol_surge_2w": 0.86,
-      "delta_1w": 0.0,
-      "delta_2w": 0.78,
-      "delta_4w": -0.42,
-      "delta_rs": 0.0,
-      "delta_vol": 0.0,
-      "delta_tech": 0.0,
-      "rank": 9
+      "score": 5.96,
+      "rs": 4.83,
+      "volume": 7.14,
+      "technical": 4.67,
+      "rs_pct": -1.48,
+      "price_1w": 2.33,
+      "price_2w": 1.51,
+      "vol_surge_2w": 0.87,
+      "delta_1w": 2.33,
+      "delta_2w": 2.33,
+      "delta_4w": 3.11,
+      "delta_rs": 4.41,
+      "delta_vol": 1.58,
+      "delta_tech": -0.02,
+      "rank": 4
     },
     {
-      "ticker": "XLU",
-      "name": "Utilities",
-      "score": 1.61,
-      "rs": 0.0,
-      "volume": 3.17,
-      "technical": 0.17,
-      "rs_pct": -3.29,
-      "price_1w": -4.19,
-      "price_2w": -1.82,
+      "ticker": "XLI",
+      "name": "Industrials",
+      "score": 5.49,
+      "rs": 4.95,
+      "volume": 4.53,
+      "technical": 9.95,
+      "rs_pct": -1.39,
+      "price_1w": -0.34,
+      "price_2w": 2.5,
       "vol_surge_2w": 0.91,
-      "delta_1w": 0.0,
-      "delta_2w": -4.76,
-      "delta_4w": -3.89,
-      "delta_rs": 0.0,
-      "delta_vol": 0.0,
+      "delta_1w": 1.78,
+      "delta_2w": 1.78,
+      "delta_4w": -0.62,
+      "delta_rs": 2.31,
+      "delta_vol": 1.93,
+      "delta_tech": 0.05,
+      "rank": 5
+    },
+    {
+      "ticker": "XLV",
+      "name": "Health Care",
+      "score": 5.41,
+      "rs": 4.08,
+      "volume": 5.0,
+      "technical": 9.88,
+      "rs_pct": -2.02,
+      "price_1w": -0.8,
+      "price_2w": 1.79,
+      "vol_surge_2w": 0.8,
+      "delta_1w": 0.99,
+      "delta_2w": 0.99,
+      "delta_4w": 2.37,
+      "delta_rs": -1.14,
+      "delta_vol": 2.78,
+      "delta_tech": -0.04,
+      "rank": 6
+    },
+    {
+      "ticker": "XLF",
+      "name": "Financials",
+      "score": 5.26,
+      "rs": 6.24,
+      "volume": 3.15,
+      "technical": 10.0,
+      "rs_pct": -0.47,
+      "price_1w": 0.64,
+      "price_2w": 2.15,
+      "vol_surge_2w": 0.89,
+      "delta_1w": 0.28,
+      "delta_2w": 0.28,
+      "delta_4w": -1.24,
+      "delta_rs": -0.54,
+      "delta_vol": 0.94,
       "delta_tech": 0.0,
-      "rank": 10
+      "rank": 7
+    },
+    {
+      "ticker": "XLB",
+      "name": "Materials",
+      "score": 5.05,
+      "rs": 3.99,
+      "volume": 5.82,
+      "technical": 4.95,
+      "rs_pct": -2.08,
+      "price_1w": -1.04,
+      "price_2w": 1.65,
+      "vol_surge_2w": 1.03,
+      "delta_1w": 1.24,
+      "delta_2w": 1.24,
+      "delta_4w": -2.64,
+      "delta_rs": 1.23,
+      "delta_vol": 1.64,
+      "delta_tech": -0.05,
+      "rank": 8
     },
     {
       "ticker": "XLC",
       "name": "Communication",
-      "score": 1.55,
-      "rs": 3.65,
-      "volume": 0.54,
-      "technical": 0.0,
-      "rs_pct": -0.63,
-      "price_1w": 1.83,
-      "price_2w": -2.18,
-      "vol_surge_2w": 0.86,
-      "delta_1w": 0.0,
-      "delta_2w": -1.93,
-      "delta_4w": -3.91,
-      "delta_rs": 0.0,
+      "score": 4.29,
+      "rs": 6.63,
+      "volume": 2.49,
+      "technical": 4.83,
+      "rs_pct": -0.18,
+      "price_1w": 3.47,
+      "price_2w": 0.54,
+      "vol_surge_2w": 0.92,
+      "delta_1w": 2.74,
+      "delta_2w": 2.74,
+      "delta_4w": 0.81,
+      "delta_rs": 2.98,
+      "delta_vol": 1.95,
+      "delta_tech": 4.83,
+      "rank": 9
+    },
+    {
+      "ticker": "XLE",
+      "name": "Energy",
+      "score": 4.03,
+      "rs": 7.33,
+      "volume": 0.0,
+      "technical": 9.76,
+      "rs_pct": 0.31,
+      "price_1w": 0.71,
+      "price_2w": 1.44,
+      "vol_surge_2w": 0.9,
+      "delta_1w": -0.95,
+      "delta_2w": -0.95,
+      "delta_4w": -5.3,
+      "delta_rs": -2.67,
       "delta_vol": 0.0,
-      "delta_tech": 0.0,
+      "delta_tech": -0.09,
+      "rank": 10
+    },
+    {
+      "ticker": "XLU",
+      "name": "Utilities",
+      "score": 2.52,
+      "rs": 0.0,
+      "volume": 5.04,
+      "technical": 0.0,
+      "rs_pct": -4.94,
+      "price_1w": -3.06,
+      "price_2w": -1.47,
+      "vol_surge_2w": 0.94,
+      "delta_1w": 0.91,
+      "delta_2w": 0.91,
+      "delta_4w": -3.85,
+      "delta_rs": 0.0,
+      "delta_vol": 1.87,
+      "delta_tech": -0.17,
       "rank": 11
     }
   ],
@@ -215,210 +215,210 @@
     {
       "ticker": "EXH1.DE",
       "name": "Oil & Gas",
-      "score": 6.16,
-      "rs": 6.31,
-      "volume": 5.03,
-      "technical": 9.58,
-      "rs_pct": 0.29,
-      "price_1w": 0.76,
-      "price_2w": 1.59,
-      "vol_surge_2w": 1.13,
-      "delta_1w": -1.92,
-      "delta_2w": -0.75,
-      "delta_4w": 1.73,
-      "delta_rs": -3.69,
-      "delta_vol": -1.18,
-      "delta_tech": -0.27,
+      "score": 7.16,
+      "rs": 9.51,
+      "volume": 4.72,
+      "technical": 9.84,
+      "rs_pct": 1.38,
+      "price_1w": 2.11,
+      "price_2w": 2.95,
+      "vol_surge_2w": 1.17,
+      "delta_1w": 0.24,
+      "delta_2w": -0.92,
+      "delta_4w": 0.25,
+      "delta_rs": -0.49,
+      "delta_vol": 0.83,
+      "delta_tech": -0.01,
       "rank": 1
     },
     {
       "ticker": "EXV5.DE",
       "name": "Automobiles & Parts",
-      "score": 5.96,
+      "score": 6.39,
       "rs": 10.0,
-      "volume": 4.91,
-      "technical": 0.05,
-      "rs_pct": 2.99,
-      "price_1w": 4.85,
-      "price_2w": 4.97,
-      "vol_surge_2w": 1.09,
-      "delta_1w": -1.08,
-      "delta_2w": 3.16,
-      "delta_4w": 4.74,
-      "delta_rs": 0.86,
-      "delta_vol": -1.39,
-      "delta_tech": -4.58,
+      "volume": 4.43,
+      "technical": 4.51,
+      "rs_pct": 1.72,
+      "price_1w": 3.87,
+      "price_2w": 3.99,
+      "vol_surge_2w": 1.12,
+      "delta_1w": 0.55,
+      "delta_2w": -0.65,
+      "delta_4w": 3.59,
+      "delta_rs": 0.93,
+      "delta_vol": 0.48,
+      "delta_tech": -0.12,
       "rank": 2
     },
     {
       "ticker": "EXH4.DE",
       "name": "Industrial Goods & Services",
-      "score": 5.51,
-      "rs": 7.45,
-      "volume": 2.82,
-      "technical": 9.95,
-      "rs_pct": 1.12,
-      "price_1w": 2.86,
-      "price_2w": 5.05,
-      "vol_surge_2w": 0.86,
-      "delta_1w": -0.85,
-      "delta_2w": 1.41,
-      "delta_4w": 1.49,
-      "delta_rs": 0.46,
-      "delta_vol": -2.02,
-      "delta_tech": 0.02,
+      "score": 6.15,
+      "rs": 9.43,
+      "volume": 2.69,
+      "technical": 10.0,
+      "rs_pct": 1.32,
+      "price_1w": 3.34,
+      "price_2w": 5.54,
+      "vol_surge_2w": 0.91,
+      "delta_1w": 0.78,
+      "delta_2w": -0.21,
+      "delta_4w": 2.05,
+      "delta_rs": 2.68,
+      "delta_vol": -0.34,
+      "delta_tech": 0.07,
       "rank": 3
     },
     {
       "ticker": "EXV1.DE",
       "name": "Banks",
-      "score": 5.44,
-      "rs": 8.14,
-      "volume": 2.19,
+      "score": 5.85,
+      "rs": 9.99,
+      "volume": 1.71,
       "technical": 10.0,
-      "rs_pct": 1.63,
-      "price_1w": 2.3,
-      "price_2w": 5.49,
-      "vol_surge_2w": 0.63,
-      "delta_1w": -0.05,
-      "delta_2w": 0.46,
-      "delta_4w": 1.27,
-      "delta_rs": 0.09,
-      "delta_vol": -0.15,
+      "rs_pct": 1.71,
+      "price_1w": 2.66,
+      "price_2w": 5.86,
+      "vol_surge_2w": 0.65,
+      "delta_1w": 0.85,
+      "delta_2w": 0.36,
+      "delta_4w": 0.87,
+      "delta_rs": 2.09,
+      "delta_vol": 0.24,
       "delta_tech": 0.0,
       "rank": 4
+    },
+    {
+      "ticker": "EXH5.DE",
+      "name": "Insurance",
+      "score": 5.5,
+      "rs": 5.84,
+      "volume": 3.91,
+      "technical": 10.0,
+      "rs_pct": -1.17,
+      "price_1w": 0.33,
+      "price_2w": 1.29,
+      "vol_surge_2w": 0.76,
+      "delta_1w": null,
+      "delta_2w": -0.26,
+      "delta_4w": 1.65,
+      "delta_rs": null,
+      "delta_vol": null,
+      "delta_tech": null,
+      "rank": 5
     },
     {
       "ticker": "EXH3.DE",
       "name": "Food & Beverage",
       "score": 5.29,
-      "rs": 4.58,
-      "volume": 4.4,
-      "technical": 9.9,
-      "rs_pct": -0.97,
-      "price_1w": 1.84,
-      "price_2w": -0.98,
-      "vol_surge_2w": 0.92,
-      "delta_1w": -0.84,
-      "delta_2w": 1.23,
-      "delta_4w": 0.23,
-      "delta_rs": -1.73,
-      "delta_vol": -0.46,
-      "delta_tech": -0.06,
-      "rank": 5
+      "rs": 5.58,
+      "volume": 3.69,
+      "technical": 9.94,
+      "rs_pct": -1.35,
+      "price_1w": 1.75,
+      "price_2w": -1.07,
+      "vol_surge_2w": 0.93,
+      "delta_1w": null,
+      "delta_2w": -0.84,
+      "delta_4w": 1.23,
+      "delta_rs": null,
+      "delta_vol": null,
+      "delta_tech": null,
+      "rank": 6
     },
     {
       "ticker": "EXV4.DE",
       "name": "Health Care",
-      "score": 5.17,
-      "rs": 0.24,
+      "score": 5.0,
+      "rs": 0.0,
       "volume": 10.0,
-      "technical": 0.6,
-      "rs_pct": -4.15,
-      "price_1w": -2.67,
-      "price_2w": -0.48,
-      "vol_surge_2w": 1.2,
-      "delta_1w": -2.07,
-      "delta_2w": 2.84,
-      "delta_4w": -0.5,
-      "delta_rs": -2.0,
-      "delta_vol": 0.0,
-      "delta_tech": -9.11,
-      "rank": 6
-    },
-    {
-      "ticker": "EXH5.DE",
-      "name": "Insurance",
-      "score": 5.06,
-      "rs": 4.5,
-      "volume": 3.98,
-      "technical": 9.98,
-      "rs_pct": -1.03,
-      "price_1w": 0.18,
-      "price_2w": 1.15,
-      "vol_surge_2w": 0.7,
-      "delta_1w": -0.7,
-      "delta_2w": 1.21,
-      "delta_4w": -4.94,
-      "delta_rs": -1.47,
-      "delta_vol": -0.36,
-      "delta_tech": -0.02,
+      "technical": 0.0,
+      "rs_pct": -5.22,
+      "price_1w": -3.45,
+      "price_2w": -1.27,
+      "vol_surge_2w": 1.26,
+      "delta_1w": -0.17,
+      "delta_2w": -2.24,
+      "delta_4w": 2.67,
+      "delta_rs": -1.64,
+      "delta_vol": 3.73,
+      "delta_tech": -9.71,
       "rank": 7
     },
     {
       "ticker": "EXV6.DE",
       "name": "Basic Resources",
-      "score": 3.31,
-      "rs": 6.81,
-      "volume": 1.81,
-      "technical": 0.14,
-      "rs_pct": 0.65,
-      "price_1w": 2.74,
-      "price_2w": 5.24,
-      "vol_surge_2w": 0.41,
-      "delta_1w": -0.99,
-      "delta_2w": 0.97,
-      "delta_4w": 0.45,
-      "delta_rs": -0.75,
-      "delta_vol": -0.06,
-      "delta_tech": -4.66,
+      "score": 4.77,
+      "rs": 8.74,
+      "volume": 2.04,
+      "technical": 4.62,
+      "rs_pct": 0.85,
+      "price_1w": 3.22,
+      "price_2w": 5.73,
+      "vol_surge_2w": 0.47,
+      "delta_1w": 0.89,
+      "delta_2w": 0.47,
+      "delta_4w": 2.43,
+      "delta_rs": 1.37,
+      "delta_vol": 0.87,
+      "delta_tech": -0.18,
       "rank": 8
-    },
-    {
-      "ticker": "EXV3.DE",
-      "name": "Technology",
-      "score": 2.2,
-      "rs": 3.2,
-      "volume": 2.0,
-      "technical": 0.55,
-      "rs_pct": -1.98,
-      "price_1w": 2.19,
-      "price_2w": 0.81,
-      "vol_surge_2w": 0.9,
-      "delta_1w": -1.01,
-      "delta_2w": -3.05,
-      "delta_4w": -1.53,
-      "delta_rs": 2.47,
-      "delta_vol": -2.43,
-      "delta_tech": -4.41,
-      "rank": 9
     },
     {
       "ticker": "EXH9.DE",
       "name": "Utilities",
-      "score": 1.85,
-      "rs": 0.0,
-      "volume": 3.43,
-      "technical": 0.88,
-      "rs_pct": -4.33,
-      "price_1w": -2.17,
-      "price_2w": -2.6,
-      "vol_surge_2w": 1.12,
-      "delta_1w": -2.17,
-      "delta_2w": -3.57,
-      "delta_4w": -4.42,
-      "delta_rs": 0.0,
-      "delta_vol": -3.05,
-      "delta_tech": -4.29,
+      "score": 3.38,
+      "rs": 1.17,
+      "volume": 3.0,
+      "technical": 9.82,
+      "rs_pct": -4.4,
+      "price_1w": -1.97,
+      "price_2w": -2.4,
+      "vol_surge_2w": 1.15,
+      "delta_1w": null,
+      "delta_2w": -0.64,
+      "delta_4w": -2.04,
+      "delta_rs": null,
+      "delta_vol": null,
+      "delta_tech": null,
+      "rank": 9
+    },
+    {
+      "ticker": "EXV3.DE",
+      "name": "Technology",
+      "score": 3.22,
+      "rs": 5.1,
+      "volume": 1.41,
+      "technical": 4.85,
+      "rs_pct": -1.68,
+      "price_1w": 2.79,
+      "price_2w": 1.4,
+      "vol_surge_2w": 0.91,
+      "delta_1w": 1.09,
+      "delta_2w": 0.01,
+      "delta_4w": -2.03,
+      "delta_rs": 5.1,
+      "delta_vol": -1.37,
+      "delta_tech": -0.11,
       "rank": 10
     },
     {
       "ticker": "EXV2.DE",
       "name": "Telecommunications",
-      "score": 0.22,
-      "rs": 0.64,
+      "score": 1.5,
+      "rs": 2.35,
       "volume": 0.0,
-      "technical": 0.0,
-      "rs_pct": -3.86,
-      "price_1w": 0.76,
-      "price_2w": -0.2,
-      "vol_surge_2w": 0.95,
-      "delta_1w": -0.23,
-      "delta_2w": -4.8,
-      "delta_4w": -3.74,
-      "delta_rs": -0.64,
+      "technical": 4.54,
+      "rs_pct": -3.59,
+      "price_1w": 1.33,
+      "price_2w": 0.37,
+      "vol_surge_2w": 1.02,
+      "delta_1w": 1.29,
+      "delta_2w": 1.05,
+      "delta_4w": -3.52,
+      "delta_rs": 1.75,
       "delta_vol": 0.0,
-      "delta_tech": 0.0,
+      "delta_tech": 4.54,
       "rank": 11
     }
   ],
@@ -426,500 +426,65 @@
     {
       "ticker": "WCLD",
       "name": "Cloud",
-      "score": 6.5,
+      "score": 9.26,
       "rs": 10.0,
-      "volume": 3.01,
-      "technical": 9.94,
-      "rs_pct": 7.07,
-      "price_1w": 9.37,
-      "price_2w": 2.01,
-      "vol_surge_2w": 0.94,
+      "volume": 8.52,
+      "technical": 10.0,
+      "rs_pct": 5.35,
+      "price_1w": 8.26,
+      "price_2w": 5.25,
+      "vol_surge_2w": 0.96,
       "rank": 1
     },
     {
       "ticker": "IGV",
       "name": "Software",
-      "score": 5.48,
-      "rs": 8.53,
-      "volume": 4.98,
-      "technical": 0.0,
-      "rs_pct": 4.9,
-      "price_1w": 7.5,
-      "price_2w": 1.92,
-      "vol_surge_2w": 0.99,
+      "score": 7.84,
+      "rs": 9.17,
+      "volume": 6.7,
+      "technical": 8.55,
+      "rs_pct": 4.45,
+      "price_1w": 7.31,
+      "price_2w": 4.93,
+      "vol_surge_2w": 1.02,
       "rank": 2
     },
     {
       "ticker": "SMH",
       "name": "Semiconductors",
-      "score": 5.01,
+      "score": 5.0,
       "rs": 0.0,
       "volume": 10.0,
-      "technical": 0.04,
-      "rs_pct": -7.63,
-      "price_1w": -3.68,
-      "price_2w": -2.87,
-      "vol_surge_2w": 1.25,
+      "technical": 0.0,
+      "rs_pct": -5.57,
+      "price_1w": -0.59,
+      "price_2w": -2.42,
+      "vol_surge_2w": 1.26,
       "rank": 3
     },
     {
       "ticker": "CIBR",
       "name": "Cybersecurity",
-      "score": 3.77,
-      "rs": 6.48,
+      "score": 3.93,
+      "rs": 6.96,
       "volume": 0.0,
-      "technical": 10.0,
-      "rs_pct": 1.89,
-      "price_1w": 3.88,
-      "price_2w": -0.57,
-      "vol_surge_2w": 0.87,
+      "technical": 9.97,
+      "rs_pct": 2.03,
+      "price_1w": 5.44,
+      "price_2w": 2.35,
+      "vol_surge_2w": 0.86,
       "rank": 4
     }
   ],
   "history": [
     {
-      "date": "2026-06-02",
+      "date": "2026-07-11",
       "us": {
-        "XLB": {
-          "s": 7.27,
-          "r": 2.27,
-          "v": 10.0,
-          "t": 9.83
-        },
-        "XLK": {
-          "s": 6.96,
-          "r": 10.0,
-          "v": 3.93,
-          "t": 10.0
-        },
         "XLY": {
-          "s": 3.92,
-          "r": 1.17,
-          "v": 4.1,
-          "t": 9.73
-        },
-        "XLP": {
-          "s": 3.16,
-          "r": 0.78,
-          "v": 4.34,
-          "t": 4.78
-        },
-        "XLF": {
-          "s": 3.02,
-          "r": 2.34,
-          "v": 2.97,
-          "t": 4.79
-        },
-        "XLV": {
-          "s": 3.02,
-          "r": 2.8,
-          "v": 4.08,
-          "t": 0.0
-        },
-        "XLE": {
-          "s": 2.87,
-          "r": 3.06,
-          "v": 2.15,
-          "t": 4.84
-        },
-        "XLI": {
-          "s": 2.41,
-          "r": 2.19,
-          "v": 0.32,
-          "t": 9.88
-        },
-        "XLU": {
-          "s": 2.13,
-          "r": 0.0,
-          "v": 4.24,
-          "t": 0.04
-        },
-        "XLC": {
-          "s": 1.96,
-          "r": 1.0,
-          "v": 3.18,
-          "t": 0.15
-        },
-        "XLRE": {
-          "s": 1.59,
-          "r": 0.31,
-          "v": 0.0,
-          "t": 9.86
-        }
-      },
-      "eu": {
-        "EXI3.DE": {
-          "s": 7.92,
-          "r": 4.18,
+          "s": 8.62,
+          "r": 6.16,
           "v": 10.0,
-          "t": 9.69
-        },
-        "EXV3.DE": {
-          "s": 5.46,
-          "r": 10.0,
-          "v": 0.92,
-          "t": 10.0
-        },
-        "EXV6.DE": {
-          "s": 4.49,
-          "r": 6.66,
-          "v": 1.31,
-          "t": 10.0
-        },
-        "EXV1.DE": {
-          "s": 4.14,
-          "r": 4.64,
-          "v": 2.03,
-          "t": 9.99
-        },
-        "EXH8.DE": {
-          "s": 3.74,
-          "r": 5.44,
-          "v": 0.76,
-          "t": 9.72
-        },
-        "EXH7.DE": {
-          "s": 3.48,
-          "r": 2.93,
-          "v": 3.48,
-          "t": 4.75
-        },
-        "EXH4.DE": {
-          "s": 3.14,
-          "r": 3.76,
-          "v": 0.67,
-          "t": 9.95
-        },
-        "EXV2.DE": {
-          "s": 3.1,
-          "r": 3.97,
-          "v": 0.42,
-          "t": 9.99
-        },
-        "EXV5.DE": {
-          "s": 2.18,
-          "r": 4.21,
-          "v": 0.0,
-          "t": 4.72
-        },
-        "EXH1.DE": {
-          "s": 1.7,
-          "r": 1.0,
-          "v": 1.19,
-          "t": 5.04
-        },
-        "EXV4.DE": {
-          "s": 1.05,
-          "r": 0.0,
-          "v": 2.1,
-          "t": 0.0
-        }
-      }
-    },
-    {
-      "date": "2026-06-05",
-      "us": {
-        "XLV": {
-          "s": 9.38,
-          "r": 10.0,
-          "v": 8.81,
-          "t": 9.8
-        },
-        "XLP": {
-          "s": 7.43,
-          "r": 4.7,
-          "v": 8.67,
-          "t": 9.67
-        },
-        "XLB": {
-          "s": 6.95,
-          "r": 3.46,
-          "v": 10.0,
-          "t": 4.93
-        },
-        "XLRE": {
-          "s": 6.62,
-          "r": 7.78,
-          "v": 4.8,
-          "t": 10.0
-        },
-        "XLF": {
-          "s": 6.47,
-          "r": 7.75,
-          "v": 4.61,
-          "t": 9.67
-        },
-        "XLK": {
-          "s": 5.51,
-          "r": 2.02,
-          "v": 6.74,
-          "t": 9.56
-        },
-        "XLU": {
-          "s": 4.4,
-          "r": 4.56,
-          "v": 4.14,
-          "t": 4.87
-        },
-        "XLI": {
-          "s": 4.36,
-          "r": 5.77,
-          "v": 1.72,
-          "t": 9.89
-        },
-        "XLC": {
-          "s": 3.55,
-          "r": 0.04,
-          "v": 7.06,
-          "t": 0.04
-        },
-        "XLE": {
-          "s": 3.05,
-          "r": 6.67,
-          "v": 0.0,
-          "t": 4.8
-        },
-        "XLY": {
-          "s": 0.1,
-          "r": 0.0,
-          "v": 0.2,
-          "t": 0.0
-        }
-      },
-      "eu": {
-        "EXV1.DE": {
-          "s": 7.73,
-          "r": 3.54,
-          "v": 10.0,
-          "t": 9.93
-        },
-        "EXI3.DE": {
-          "s": 6.16,
-          "r": 4.71,
-          "v": 6.11,
-          "t": 9.73
-        },
-        "EXV3.DE": {
-          "s": 6.08,
-          "r": 10.0,
-          "v": 2.16,
-          "t": 10.0
-        },
-        "EXV6.DE": {
-          "s": 4.39,
-          "r": 3.11,
-          "v": 3.64,
-          "t": 9.86
-        },
-        "EXV2.DE": {
-          "s": 4.27,
-          "r": 1.65,
-          "v": 4.43,
-          "t": 9.88
-        },
-        "EXH4.DE": {
-          "s": 4.23,
-          "r": 2.77,
-          "v": 3.54,
-          "t": 9.93
-        },
-        "EXH8.DE": {
-          "s": 3.73,
-          "r": 6.45,
-          "v": 0.0,
-          "t": 9.8
-        },
-        "EXH7.DE": {
-          "s": 3.6,
-          "r": 0.0,
-          "v": 5.81,
-          "t": 4.62
-        },
-        "EXH1.DE": {
-          "s": 3.24,
-          "r": 2.57,
-          "v": 3.18,
-          "t": 5.01
-        },
-        "EXV4.DE": {
-          "s": 2.37,
-          "r": 1.59,
-          "v": 3.62,
-          "t": 0.0
-        },
-        "EXV5.DE": {
-          "s": 1.66,
-          "r": 0.15,
-          "v": 1.85,
-          "t": 4.54
-        }
-      }
-    },
-    {
-      "date": "2026-06-12",
-      "us": {
-        "XLK": {
-          "s": 9.51,
-          "r": 8.74,
-          "v": 10.0,
-          "t": 9.66
-        },
-        "XLI": {
-          "s": 7.27,
-          "r": 7.4,
-          "v": 6.37,
-          "t": 9.94
-        },
-        "XLB": {
-          "s": 6.52,
-          "r": 10.0,
-          "v": 3.08,
-          "t": 9.89
-        },
-        "XLF": {
-          "s": 6.49,
-          "r": 7.97,
-          "v": 4.47,
-          "t": 9.75
-        },
-        "XLV": {
-          "s": 5.26,
-          "r": 7.3,
-          "v": 2.46,
-          "t": 9.82
-        },
-        "XLP": {
-          "s": 5.25,
-          "r": 7.19,
-          "v": 2.52,
-          "t": 9.79
-        },
-        "XLRE": {
-          "s": 5.17,
-          "r": 6.46,
-          "v": 2.81,
-          "t": 10.0
-        },
-        "XLC": {
-          "s": 4.21,
-          "r": 0.0,
-          "v": 8.41,
-          "t": 0.0
-        },
-        "XLY": {
-          "s": 2.26,
-          "r": 3.2,
-          "v": 2.27,
-          "t": 0.03
-        },
-        "XLE": {
-          "s": 1.84,
-          "r": 0.86,
-          "v": 1.65,
-          "t": 4.77
-        },
-        "XLU": {
-          "s": 1.73,
-          "r": 2.86,
-          "v": 0.0,
-          "t": 4.87
-        }
-      },
-      "eu": {
-        "EXH7.DE": {
-          "s": 8.08,
-          "r": 8.45,
-          "v": 8.75,
-          "t": 5.0
-        },
-        "EXV1.DE": {
-          "s": 6.86,
-          "r": 3.01,
-          "v": 8.63,
-          "t": 9.95
-        },
-        "EXV2.DE": {
-          "s": 6.69,
-          "r": 0.59,
-          "v": 10.0,
-          "t": 9.87
-        },
-        "EXH8.DE": {
-          "s": 5.77,
-          "r": 10.0,
-          "v": 1.54,
-          "t": 10.0
-        },
-        "EXV3.DE": {
-          "s": 5.23,
-          "r": 7.16,
-          "v": 2.46,
-          "t": 9.98
-        },
-        "EXH4.DE": {
-          "s": 3.99,
-          "r": 2.19,
-          "v": 4.88,
-          "t": 5.23
-        },
-        "EXV4.DE": {
-          "s": 3.69,
-          "r": 4.48,
-          "v": 1.34,
-          "t": 9.69
-        },
-        "EXI3.DE": {
-          "s": 2.9,
-          "r": 4.09,
-          "v": 0.0,
           "t": 9.76
-        },
-        "EXV6.DE": {
-          "s": 2.0,
-          "r": 0.0,
-          "v": 1.1,
-          "t": 9.7
-        },
-        "EXH1.DE": {
-          "s": 1.57,
-          "r": 2.05,
-          "v": 0.15,
-          "t": 5.2
-        },
-        "EXV5.DE": {
-          "s": 0.87,
-          "r": 2.48,
-          "v": 0.01,
-          "t": 0.0
-        }
-      }
-    },
-    {
-      "date": "2026-07-10",
-      "us": {
-        "XLK": {
-          "s": 4.05,
-          "r": 7.4,
-          "v": 0.0,
-          "t": 9.73
-        },
-        "XLC": {
-          "s": 5.46,
-          "r": 8.87,
-          "v": 4.71,
-          "t": 0.0
-        },
-        "XLF": {
-          "s": 5.81,
-          "r": 8.05,
-          "v": 2.99,
-          "t": 10.0
-        },
-        "XLE": {
-          "s": 6.45,
-          "r": 9.52,
-          "v": 4.86,
-          "t": 4.61
         },
         "XLV": {
           "s": 7.93,
@@ -927,29 +492,17 @@
           "v": 5.88,
           "t": 9.93
         },
-        "XLI": {
-          "s": 4.58,
-          "r": 4.71,
-          "v": 2.88,
-          "t": 9.94
+        "XLE": {
+          "s": 6.45,
+          "r": 9.52,
+          "v": 4.86,
+          "t": 4.61
         },
-        "XLB": {
-          "s": 4.81,
-          "r": 0.0,
-          "v": 8.12,
-          "t": 4.97
-        },
-        "XLY": {
-          "s": 8.62,
-          "r": 6.16,
-          "v": 10.0,
-          "t": 9.76
-        },
-        "XLP": {
-          "s": 5.48,
-          "r": 4.43,
-          "v": 4.92,
-          "t": 9.77
+        "XLF": {
+          "s": 5.81,
+          "r": 8.05,
+          "v": 2.98,
+          "t": 10.0
         },
         "XLU": {
           "s": 5.5,
@@ -957,79 +510,109 @@
           "v": 3.58,
           "t": 9.86
         },
+        "XLP": {
+          "s": 5.48,
+          "r": 4.43,
+          "v": 4.92,
+          "t": 9.77
+        },
+        "XLC": {
+          "s": 5.46,
+          "r": 8.87,
+          "v": 4.72,
+          "t": 0.0
+        },
         "XLRE": {
           "s": 4.99,
           "r": 5.78,
           "v": 2.95,
           "t": 9.95
+        },
+        "XLB": {
+          "s": 4.81,
+          "r": 0.0,
+          "v": 8.12,
+          "t": 4.97
+        },
+        "XLI": {
+          "s": 4.58,
+          "r": 4.71,
+          "v": 2.88,
+          "t": 9.94
+        },
+        "XLK": {
+          "s": 4.05,
+          "r": 7.4,
+          "v": 0.0,
+          "t": 9.73
         }
       },
       "eu": {
-        "EXV3.DE": {
-          "s": 3.73,
-          "r": 0.71,
-          "v": 4.04,
-          "t": 9.75
-        },
-        "EXV1.DE": {
-          "s": 4.17,
-          "r": 7.35,
-          "v": 0.2,
+        "EXI3.DE": {
+          "s": 9.83,
+          "r": 9.54,
+          "v": 10.0,
           "t": 9.95
         },
+        "EXH8.DE": {
+          "s": 6.47,
+          "r": 7.12,
+          "v": 4.97,
+          "t": 9.96
+        },
         "EXV4.DE": {
-          "s": 5.67,
-          "r": 6.66,
-          "v": 3.76,
-          "t": 9.75
+          "s": 6.08,
+          "r": 9.06,
+          "v": 2.87,
+          "t": 9.8
         },
-        "EXH1.DE": {
-          "s": 4.43,
-          "r": 5.16,
-          "v": 3.77,
-          "t": 4.92
-        },
-        "EXV5.DE": {
-          "s": 1.22,
-          "r": 3.5,
-          "v": 0.0,
-          "t": 0.0
-        },
-        "EXV6.DE": {
-          "s": 2.86,
-          "r": 0.0,
-          "v": 4.31,
-          "t": 4.73
-        },
-        "EXV2.DE": {
-          "s": 3.96,
-          "r": 3.89,
-          "v": 3.74,
-          "t": 4.88
-        },
-        "EXH5.DE": {
-          "s": 10.0,
+        "EXV1.DE": {
+          "s": 5.08,
           "r": 10.0,
-          "v": 10.0,
+          "v": 0.15,
           "t": 10.0
         },
-        "EXH9.DE": {
-          "s": 6.27,
-          "r": 6.17,
-          "v": 5.24,
-          "t": 9.91
+        "EXH1.DE": {
+          "s": 4.64,
+          "r": 7.02,
+          "v": 2.88,
+          "t": 4.96
         },
-        "EXH3.DE": {
-          "s": 5.06,
-          "r": 8.24,
-          "v": 1.37,
-          "t": 9.91
+        "EXH7.DE": {
+          "s": 4.57,
+          "r": 8.4,
+          "v": 0.35,
+          "t": 9.72
+        },
+        "EXV2.DE": {
+          "s": 4.02,
+          "r": 5.29,
+          "v": 2.86,
+          "t": 4.93
         },
         "EXH4.DE": {
-          "s": 4.02,
-          "r": 2.68,
-          "v": 3.22,
-          "t": 9.82
+          "s": 3.99,
+          "r": 3.65,
+          "v": 2.46,
+          "t": 9.87
+        },
+        "EXV3.DE": {
+          "s": 3.35,
+          "r": 0.96,
+          "v": 3.09,
+          "t": 9.8
+        },
+        "EXV6.DE": {
+          "s": 2.37,
+          "r": 0.0,
+          "v": 3.3,
+          "t": 4.77
+        },
+        "EXV5.DE": {
+          "s": 1.67,
+          "r": 4.76,
+          "v": 0.0,
+          "t": 0.0
         }
       }
     },
@@ -1173,6 +756,145 @@
       }
     },
     {
+      "date": "2026-07-18",
+      "us": {
+        "XLF": {
+          "s": 9.17,
+          "r": 7.64,
+          "v": 10.0,
+          "t": 9.96
+        },
+        "XLE": {
+          "s": 8.45,
+          "r": 10.0,
+          "v": 7.0,
+          "t": 9.65
+        },
+        "XLV": {
+          "s": 5.89,
+          "r": 6.46,
+          "v": 4.28,
+          "t": 9.9
+        },
+        "XLP": {
+          "s": 4.76,
+          "r": 6.04,
+          "v": 2.35,
+          "t": 9.8
+        },
+        "XLI": {
+          "s": 4.24,
+          "r": 2.95,
+          "v": 3.46,
+          "t": 9.84
+        },
+        "XLU": {
+          "s": 4.01,
+          "r": 3.84,
+          "v": 2.4,
+          "t": 9.8
+        },
+        "XLRE": {
+          "s": 3.86,
+          "r": 6.63,
+          "v": 0.07,
+          "t": 10.0
+        },
+        "XLY": {
+          "s": 3.61,
+          "r": 4.91,
+          "v": 3.78,
+          "t": 0.02
+        },
+        "XLC": {
+          "s": 2.64,
+          "r": 6.57,
+          "v": 0.68,
+          "t": 0.0
+        },
+        "XLB": {
+          "s": 2.07,
+          "r": 3.28,
+          "v": 0.37,
+          "t": 4.94
+        },
+        "XLK": {
+          "s": 0.69,
+          "r": 0.0,
+          "v": 0.0,
+          "t": 4.62
+        }
+      },
+      "eu": {
+        "EXH8.DE": {
+          "s": 7.9,
+          "r": 4.37,
+          "v": 9.75,
+          "t": 10.0
+        },
+        "EXI3.DE": {
+          "s": 7.86,
+          "r": 3.92,
+          "v": 10.0,
+          "t": 9.95
+        },
+        "EXH1.DE": {
+          "s": 5.47,
+          "r": 10.0,
+          "v": 1.01,
+          "t": 9.74
+        },
+        "EXV1.DE": {
+          "s": 4.31,
+          "r": 5.3,
+          "v": 1.91,
+          "t": 10.0
+        },
+        "EXH4.DE": {
+          "s": 3.99,
+          "r": 3.49,
+          "v": 2.59,
+          "t": 9.84
+        },
+        "EXV4.DE": {
+          "s": 3.63,
+          "r": 3.22,
+          "v": 2.06,
+          "t": 9.8
+        },
+        "EXH7.DE": {
+          "s": 3.62,
+          "r": 6.12,
+          "v": 0.0,
+          "t": 9.86
+        },
+        "EXV3.DE": {
+          "s": 3.18,
+          "r": 0.0,
+          "v": 4.85,
+          "t": 5.05
+        },
+        "EXV5.DE": {
+          "s": 2.89,
+          "r": 5.69,
+          "v": 1.8,
+          "t": 0.0
+        },
+        "EXV6.DE": {
+          "s": 2.06,
+          "r": 1.96,
+          "v": 1.33,
+          "t": 4.7
+        },
+        "EXV2.DE": {
+          "s": 1.7,
+          "r": 0.87,
+          "v": 1.34,
+          "t": 4.84
+        }
+      }
+    },
+    {
       "date": "2026-07-24",
       "us": {
         "XLK": {
@@ -1308,6 +1030,145 @@
           "r": 2.5,
           "v": 3.5,
           "t": 9.84
+        }
+      }
+    },
+    {
+      "date": "2026-07-25",
+      "us": {
+        "XLE": {
+          "s": 9.32,
+          "r": 10.0,
+          "v": 8.7,
+          "t": 9.81
+        },
+        "XLB": {
+          "s": 7.69,
+          "r": 4.34,
+          "v": 9.4,
+          "t": 9.82
+        },
+        "XLF": {
+          "s": 6.5,
+          "r": 4.83,
+          "v": 6.64,
+          "t": 9.96
+        },
+        "XLU": {
+          "s": 6.37,
+          "r": 5.68,
+          "v": 5.78,
+          "t": 9.92
+        },
+        "XLI": {
+          "s": 6.11,
+          "r": 4.76,
+          "v": 5.92,
+          "t": 9.92
+        },
+        "XLRE": {
+          "s": 6.03,
+          "r": 5.82,
+          "v": 4.99,
+          "t": 10.0
+        },
+        "XLY": {
+          "s": 5.0,
+          "r": 0.0,
+          "v": 10.0,
+          "t": 0.0
+        },
+        "XLP": {
+          "s": 4.55,
+          "r": 3.51,
+          "v": 3.72,
+          "t": 9.74
+        },
+        "XLC": {
+          "s": 3.48,
+          "r": 1.79,
+          "v": 5.7,
+          "t": 0.04
+        },
+        "XLV": {
+          "s": 3.04,
+          "r": 4.42,
+          "v": 0.0,
+          "t": 9.94
+        },
+        "XLK": {
+          "s": 2.85,
+          "r": 3.44,
+          "v": 1.87,
+          "t": 4.74
+        }
+      },
+      "eu": {
+        "EXI3.DE": {
+          "s": 7.44,
+          "r": 2.74,
+          "v": 10.0,
+          "t": 9.9
+        },
+        "EXH1.DE": {
+          "s": 6.6,
+          "r": 10.0,
+          "v": 3.24,
+          "t": 9.87
+        },
+        "EXV1.DE": {
+          "s": 4.73,
+          "r": 5.33,
+          "v": 2.73,
+          "t": 10.0
+        },
+        "EXV3.DE": {
+          "s": 4.49,
+          "r": 0.96,
+          "v": 6.79,
+          "t": 5.09
+        },
+        "EXV2.DE": {
+          "s": 4.1,
+          "r": 0.0,
+          "v": 8.15,
+          "t": 0.17
+        },
+        "EXH4.DE": {
+          "s": 3.83,
+          "r": 2.5,
+          "v": 2.95,
+          "t": 9.87
+        },
+        "EXV6.DE": {
+          "s": 2.42,
+          "r": 4.63,
+          "v": 0.14,
+          "t": 4.85
+        },
+        "EXV5.DE": {
+          "s": 2.36,
+          "r": 0.71,
+          "v": 4.23,
+          "t": 0.0
+        },
+        "EXV4.DE": {
+          "s": 2.35,
+          "r": 1.6,
+          "v": 0.64,
+          "t": 9.77
+        },
+        "EXH8.DE": {
+          "s": 2.18,
+          "r": 1.97,
+          "v": 0.0,
+          "t": 9.93
+        },
+        "EXH7.DE": {
+          "s": 1.98,
+          "r": 1.06,
+          "v": 1.69,
+          "t": 5.11
         }
       }
     },
@@ -1451,7 +1312,7 @@
       }
     },
     {
-      "date": "2026-08-03",
+      "date": "2026-08-01",
       "us": {
         "XLP": {
           "s": 8.58,
@@ -1522,70 +1383,209 @@
       },
       "eu": {
         "EXH1.DE": {
-          "s": 6.16,
-          "r": 6.31,
-          "v": 5.03,
-          "t": 9.58
+          "s": 6.92,
+          "r": 10.0,
+          "v": 3.89,
+          "t": 9.85
+        },
+        "EXI3.DE": {
+          "s": 6.9,
+          "r": 1.21,
+          "v": 10.0,
+          "t": 9.84
+        },
+        "EXH7.DE": {
+          "s": 6.0,
+          "r": 4.4,
+          "v": 6.02,
+          "t": 9.7
         },
         "EXV5.DE": {
-          "s": 5.96,
-          "r": 10.0,
-          "v": 4.91,
-          "t": 0.05
+          "s": 5.84,
+          "r": 9.07,
+          "v": 3.95,
+          "t": 4.63
         },
         "EXH4.DE": {
-          "s": 5.51,
-          "r": 7.45,
-          "v": 2.82,
-          "t": 9.95
+          "s": 5.37,
+          "r": 6.75,
+          "v": 3.03,
+          "t": 9.93
+        },
+        "EXV4.DE": {
+          "s": 5.17,
+          "r": 1.64,
+          "v": 6.27,
+          "t": 9.71
         },
         "EXV1.DE": {
-          "s": 5.44,
-          "r": 8.14,
-          "v": 2.19,
+          "s": 5.0,
+          "r": 7.9,
+          "v": 1.47,
+          "t": 10.0
+        },
+        "EXH8.DE": {
+          "s": 4.76,
+          "r": 7.19,
+          "v": 1.51,
+          "t": 9.93
+        },
+        "EXV6.DE": {
+          "s": 3.88,
+          "r": 7.37,
+          "v": 1.17,
+          "t": 4.8
+        },
+        "EXV3.DE": {
+          "s": 2.13,
+          "r": 0.0,
+          "v": 2.78,
+          "t": 4.96
+        },
+        "EXV2.DE": {
+          "s": 0.21,
+          "r": 0.6,
+          "v": 0.0,
+          "t": 0.0
+        }
+      }
+    },
+    {
+      "date": "2026-08-03",
+      "us": {
+        "XLP": {
+          "s": 7.96,
+          "r": 4.26,
+          "v": 10.0,
+          "t": 9.81
+        },
+        "XLRE": {
+          "s": 7.24,
+          "r": 4.07,
+          "v": 8.65,
+          "t": 9.94
+        },
+        "XLY": {
+          "s": 6.37,
+          "r": 10.0,
+          "v": 2.81,
+          "t": 9.79
+        },
+        "XLK": {
+          "s": 5.96,
+          "r": 4.83,
+          "v": 7.14,
+          "t": 4.67
+        },
+        "XLI": {
+          "s": 5.49,
+          "r": 4.95,
+          "v": 4.53,
+          "t": 9.95
+        },
+        "XLV": {
+          "s": 5.41,
+          "r": 4.08,
+          "v": 5.0,
+          "t": 9.88
+        },
+        "XLF": {
+          "s": 5.26,
+          "r": 6.24,
+          "v": 3.15,
+          "t": 10.0
+        },
+        "XLB": {
+          "s": 5.05,
+          "r": 3.99,
+          "v": 5.82,
+          "t": 4.95
+        },
+        "XLC": {
+          "s": 4.29,
+          "r": 6.63,
+          "v": 2.49,
+          "t": 4.83
+        },
+        "XLE": {
+          "s": 4.03,
+          "r": 7.33,
+          "v": 0.0,
+          "t": 9.76
+        },
+        "XLU": {
+          "s": 2.52,
+          "r": 0.0,
+          "v": 5.04,
+          "t": 0.0
+        }
+      },
+      "eu": {
+        "EXH1.DE": {
+          "s": 7.16,
+          "r": 9.51,
+          "v": 4.72,
+          "t": 9.84
+        },
+        "EXV5.DE": {
+          "s": 6.39,
+          "r": 10.0,
+          "v": 4.43,
+          "t": 4.51
+        },
+        "EXH4.DE": {
+          "s": 6.15,
+          "r": 9.43,
+          "v": 2.69,
+          "t": 10.0
+        },
+        "EXV1.DE": {
+          "s": 5.85,
+          "r": 9.99,
+          "v": 1.71,
+          "t": 10.0
+        },
+        "EXH5.DE": {
+          "s": 5.5,
+          "r": 5.84,
+          "v": 3.91,
           "t": 10.0
         },
         "EXH3.DE": {
           "s": 5.29,
-          "r": 4.58,
-          "v": 4.4,
-          "t": 9.9
+          "r": 5.58,
+          "v": 3.69,
+          "t": 9.94
         },
         "EXV4.DE": {
-          "s": 5.17,
-          "r": 0.24,
+          "s": 5.0,
+          "r": 0.0,
           "v": 10.0,
-          "t": 0.6
-        },
-        "EXH5.DE": {
-          "s": 5.06,
-          "r": 4.5,
-          "v": 3.98,
-          "t": 9.98
+          "t": 0.0
         },
         "EXV6.DE": {
-          "s": 3.31,
-          "r": 6.81,
-          "v": 1.81,
-          "t": 0.14
-        },
-        "EXV3.DE": {
-          "s": 2.2,
-          "r": 3.2,
-          "v": 2.0,
-          "t": 0.55
+          "s": 4.77,
+          "r": 8.74,
+          "v": 2.04,
+          "t": 4.62
         },
         "EXH9.DE": {
-          "s": 1.85,
-          "r": 0.0,
-          "v": 3.43,
-          "t": 0.88
+          "s": 3.38,
+          "r": 1.17,
+          "v": 3.0,
+          "t": 9.82
+        },
+        "EXV3.DE": {
+          "s": 3.22,
+          "r": 5.1,
+          "v": 1.41,
+          "t": 4.85
         },
         "EXV2.DE": {
-          "s": 0.22,
-          "r": 0.64,
+          "s": 1.5,
+          "r": 2.35,
           "v": 0.0,
-          "t": 0.0
+          "t": 4.54
         }
       }
     }
